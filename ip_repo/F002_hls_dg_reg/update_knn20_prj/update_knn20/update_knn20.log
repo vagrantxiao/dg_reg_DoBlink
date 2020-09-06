@@ -1,0 +1,140 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../input_files/hls_src/dg_reg/host/check_result.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../input_files/hls_src/dg_reg/host/utils.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 49160 ; free virtual = 139493
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 49158 ; free virtual = 139491
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn20' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn20' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_final' into 'update_knn20' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7532).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 49120 ; free virtual = 139456
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn20' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4132->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495) automatically.
+WARNING: [SYNCHK 200-23] ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7477: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 48983 ; free virtual = 139320
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7492) in function 'update_knn20' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4457) in function 'update_knn20' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'popcount' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:19:28).
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7474) in function 'update_knn20' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7483) in function 'update_knn20' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4140) in function 'update_knn20' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4461) in function 'update_knn20' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4472) in function 'update_knn20' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INIT_2' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4514) in function 'update_knn20' completely with a factor of 10.
+INFO: [HLS 200-489] Unrolling loop 'VOTE' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4531) in function 'update_knn20' completely with a factor of 10.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:19) in function 'popcount' completely with a factor of 196.
+INFO: [XFORM 203-101] Partitioning array 'knn_set'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7461) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7462) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'vote_list' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4509) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4457:6) to (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4456:50) in function 'update_knn20'... converting 15 basic blocks.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.6i32P.i3' into 'update_knn20' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502).
+INFO: [XFORM 203-11] Balancing expressions in function 'popcount' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:22:14)...195 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:47 ; elapsed = 00:01:11 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 48865 ; free virtual = 139203
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7490:5) in function 'update_knn20'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4455:4) in function 'update_knn20'.
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7442:33)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:49 ; elapsed = 00:01:13 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 48791 ; free virtual = 139130
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'update_knn20' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'popcount'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 73.4 seconds; current allocated memory: 155.796 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.41 seconds; current allocated memory: 158.082 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7436) and wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7435).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7437) and wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7435).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7438) and wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7435).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7439) and wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7435).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7442) and wire read on port 'Input_1_V_V' (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7435).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: TRAINING_LOOP_LANES): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'add' operation ('i', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7491) and 'icmp' operation ('icmp_ln7491', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7491).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 18.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: LANES_INSERTION_SORT_OUTER): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'icmp' operation ('icmp_ln4474', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4474->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502) and 'icmp' operation ('icmp_ln4463_2', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: LANES_INSERTION_SORT_OUTER): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'and' operation ('and_ln4479', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4479->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502) and 'icmp' operation ('icmp_ln4463_2', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: LANES_INSERTION_SORT_OUTER): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'and' operation ('and_ln4479_1', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4479->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502) and 'icmp' operation ('icmp_ln4463_1', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7502).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'INCREMENT'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn20' (Loop: INCREMENT): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0)
+   between 'store' operation ('vote_list_9_10_write_ln4523', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4523->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7532) of variable 'vote_list[0]', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4523->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7532 on local variable 'vote_list[9]' and 'load' operation ('vote_list_9_10_load', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4523->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7532) on local variable 'vote_list[9]'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 4.
+WARNING: [SCHED 204-21] Estimated clock period (4.599ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+WARNING: [SCHED 204-21] The critical path in module 'update_knn20' consists of the following:
+	'icmp' operation ('icmp_ln4149', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4149->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495) [150]  (1.66 ns)
+	multiplexor before 'phi' operation ('knn_set_4_load_130', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4141->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495) with incoming values : ('zext_ln4132_1', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4132->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495) ('trunc_ln4141_3', ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4141->../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:7495) [180]  (1.77 ns)
+	blocking operation 1.17 ns on control path)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.21 seconds; current allocated memory: 159.548 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.46 seconds; current allocated memory: 161.646 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'popcount'.
+INFO: [HLS 200-111]  Elapsed time: 2.02 seconds; current allocated memory: 165.747 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'update_knn20/Input_1_V_V' to 'ap_hs'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'update_knn20/Output_1_V_V' to 'ap_hs' (register).
+INFO: [RTGEN 206-500] Setting interface mode on function 'update_knn20' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'index' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn20_training_set_V' to 'update_knn20_traibkb' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn20_mul_15s_2ns_15_2_1' to 'update_knn20_mul_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'update_knn20_mux_32_32_1_1' to 'update_knn20_mux_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'update_knn20_mux_104_32_1_1' to 'update_knn20_mux_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'update_knn20_mux_164_32_1_1' to 'update_knn20_mux_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'update_knn20_mul_mul_17ns_15ns_32_3_1' to 'update_knn20_mul_g8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'update_knn20_mul_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'update_knn20_mul_g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'update_knn20_mux_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'update_knn20_mux_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'update_knn20_mux_fYi': 7 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn20'.
+INFO: [HLS 200-111]  Elapsed time: 5.17 seconds; current allocated memory: 178.801 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 217.44 MHz
+INFO: [RTMG 210-282] Generating pipelined core: 'update_knn20_mul_cud_MulnS_0'

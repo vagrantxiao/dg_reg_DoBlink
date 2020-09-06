@@ -1,0 +1,373 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dg_reg/src/sdsoc/digitrec.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21371 ; free virtual = 27688
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21371 ; free virtual = 27688
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn15' (dg_reg/src/sdsoc/digitrec.cpp:6797).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn14' (dg_reg/src/sdsoc/digitrec.cpp:6644).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn13' (dg_reg/src/sdsoc/digitrec.cpp:6491).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn12' (dg_reg/src/sdsoc/digitrec.cpp:6339).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn11' (dg_reg/src/sdsoc/digitrec.cpp:6186).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn15' (dg_reg/src/sdsoc/digitrec.cpp:6811).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn14' (dg_reg/src/sdsoc/digitrec.cpp:6659).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn13' (dg_reg/src/sdsoc/digitrec.cpp:6506).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn12' (dg_reg/src/sdsoc/digitrec.cpp:6353).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn11' (dg_reg/src/sdsoc/digitrec.cpp:6200).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21342 ; free virtual = 27675
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn11' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:6186) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn12' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:6339) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn13' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:6491) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn14' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:6644) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn15' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:6797) automatically.
+WARNING: [SYNCHK 200-23] dg_reg/src/sdsoc/digitrec.cpp:6779: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21340 ; free virtual = 27673
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:6794) in function 'update_knn15' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn15' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:6641) in function 'update_knn14' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn14' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:6488) in function 'update_knn13' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn13' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:6336) in function 'update_knn12' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn12' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:6183) in function 'update_knn11' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn11' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'popcount' (dg_reg/src/sdsoc/digitrec.cpp:19:28).
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:6776) in function 'update_knn15' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:6785) in function 'update_knn15' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn15' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn15' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn15' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:6815) in function 'update_knn15' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:6623) in function 'update_knn14' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:6632) in function 'update_knn14' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn14' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn14' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn14' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:6663) in function 'update_knn14' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:6470) in function 'update_knn13' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:6479) in function 'update_knn13' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn13' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn13' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn13' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:6510) in function 'update_knn13' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:6318) in function 'update_knn12' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:6327) in function 'update_knn12' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn12' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn12' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn12' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:6357) in function 'update_knn12' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:6165) in function 'update_knn11' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:6174) in function 'update_knn11' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn11' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn11' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn11' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:6204) in function 'update_knn11' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (dg_reg/src/sdsoc/digitrec.cpp:19) in function 'popcount' completely with a factor of 196.
+INFO: [XFORM 203-101] Partitioning array 'knn_set'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:6764) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:6765) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.7'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:6610) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:6611) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.6'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:6458) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:6459) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.5'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:6305) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:6306) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.4'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:6152) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:6153) in dimension 1 completely.
+INFO: [XFORM 203-712] Applying dataflow to function 'knn_cluster3', detected/extracted 5 process function(s): 
+	 'update_knn11'
+	 'update_knn12'
+	 'update_knn13'
+	 'update_knn14'
+	 'update_knn15'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn15'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn14'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn13'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn12'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn11'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'popcount' (dg_reg/src/sdsoc/digitrec.cpp:22:14)...193 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21372 ; free virtual = 27675
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:6792:5) in function 'update_knn15'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn15'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:6639:5) in function 'update_knn14'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn14'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:6486:5) in function 'update_knn13'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn13'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:6334:5) in function 'update_knn12'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn12'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:6181:5) in function 'update_knn11'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn11'.
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.4' (dg_reg/src/sdsoc/digitrec.cpp:6718:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.3' (dg_reg/src/sdsoc/digitrec.cpp:6565:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.2' (dg_reg/src/sdsoc/digitrec.cpp:6412:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.1' (dg_reg/src/sdsoc/digitrec.cpp:6259:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V' (dg_reg/src/sdsoc/digitrec.cpp:6107:34)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21320 ; free virtual = 27622
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'knn_cluster3' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'popcount'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 25.29 seconds; current allocated memory: 208.733 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 210.975 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6101) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6100).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6102) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6100).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6103) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6100).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6104) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6100).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6107) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6100).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6115) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6114).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6116) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6114).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6117) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6114).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6118) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6114).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn11' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6121) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6114).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.73 seconds; current allocated memory: 212.206 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 213.348 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6253) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6252).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6254) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6252).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6255) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6252).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6256) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6252).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6259) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6252).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6267) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6266).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6268) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6266).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6269) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6266).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6270) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6266).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn12' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6273) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6266).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 214.391 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 215.529 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6406) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6405).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6407) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6405).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6408) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6405).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6409) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6405).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6412) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6405).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6420) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6419).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6421) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6419).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6422) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6419).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6423) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6419).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn13' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6426) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6419).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 216.612 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 217.750 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6559) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6558).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6560) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6558).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6561) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6558).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6562) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6558).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6565) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6558).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6573) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6572).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6574) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6572).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6575) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6572).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6576) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6572).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn14' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6579) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6572).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.06 seconds; current allocated memory: 218.820 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 219.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6712) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6711).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6713) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6711).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6714) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6711).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6715) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6711).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6718) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6711).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6726) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6727) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6728) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6729) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn15' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6732) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:6725).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 221.028 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 222.215 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'knn_cluster3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 222.571 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.5 seconds; current allocated memory: 224.366 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'popcount'.
+INFO: [HLS 200-111]  Elapsed time: 1.03 seconds; current allocated memory: 229.433 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'index_4' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn11_training_set_V' to 'update_knn11_traibkb' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_4_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_5' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'knn_cluster3_mux_63_32_1_1' to 'knn_cluster3_mux_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'knn_cluster3_mul_mul_17ns_15ns_32_1_1' to 'knn_cluster3_mul_dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster3_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster3_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn11'.
+INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 241.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn12' 
+INFO: [HLS 200-10]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================

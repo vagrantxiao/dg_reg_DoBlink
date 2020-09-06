@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../../input_files/hls_src/dg_reg/host/check_result.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../../input_files/hls_src/dg_reg/host/utils.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:44 ; elapsed = 00:01:06 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118574 ; free virtual = 142152"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:44 ; elapsed = 00:01:06 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118605 ; free virtual = 142183"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;update_knn&apos; into &apos;update_knn1&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;knn_vote_small&apos; into &apos;update_knn1&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118548 ; free virtual = 142128"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcount&apos; into &apos;update_knn1&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4132-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657) automatically."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:22: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:46 ; elapsed = 00:01:09 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118546 ; free virtual = 142127"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;LANES&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4654) in function &apos;update_knn1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;INSERTION_SORT_OUTER&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4457) in function &apos;update_knn1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcount&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:19:28)."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-3&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4636) in function &apos;update_knn1&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;SET_KNN_SET&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4645) in function &apos;update_knn1&apos; completely with a factor of 6."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;FIND_MAX_DIST&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4140) in function &apos;update_knn1&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;INSERTION_SORT_INNER&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4461) in function &apos;update_knn1&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;INSERT&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4472) in function &apos;update_knn1&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-7&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4675) in function &apos;update_knn1&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:19) in function &apos;popcount&apos; completely with a factor of 196."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;knn_set&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;min_distance_list&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4628) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;label_list&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4631) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4457:6) to (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4456:50) in function &apos;update_knn1&apos;... converting 9 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.6i32P.i3&apos; into &apos;update_knn1&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671)."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcount&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:22:14)...195 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:49 ; elapsed = 00:01:13 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118486 ; free virtual = 142071"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;TRAINING_LOOP&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4652:5) in function &apos;update_knn1&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;LANES&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4455:4) in function &apos;update_knn1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;training_set.V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4579:33)"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:50 ; elapsed = 00:01:15 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118465 ; free virtual = 142053"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;update_knn1&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;popcount&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;popcount&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 6."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 76.83 seconds; current allocated memory: 162.913 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.24 seconds; current allocated memory: 165.209 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;update_knn1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;STORE_LOCAL&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4573) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4572)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4574) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4572)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4575) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4572)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4576) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4572)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4579) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4572)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 8, Depth = 8."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;TRANSFER_LOOP&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4587) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4586)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4588) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4586)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4589) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4586)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4590) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4586)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4593) and wire read on port &apos;Input_1_V_V&apos; (../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4586)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 8, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;TRAINING_LOOP_LANES&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: TRAINING_LOOP_LANES): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between &apos;add&apos; operation (&apos;i&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4653) and &apos;icmp&apos; operation (&apos;icmp_ln4653&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4653)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 2, Depth = 18."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;LANES_INSERTION_SORT_OUTER&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: LANES_INSERTION_SORT_OUTER): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between &apos;select&apos; operation (&apos;select_ln4463_2&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671) and &apos;icmp&apos; operation (&apos;icmp_ln4463_2&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;update_knn1&apos; (Loop: LANES_INSERTION_SORT_OUTER): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between &apos;select&apos; operation (&apos;select_ln4463_2&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671) and &apos;icmp&apos; operation (&apos;icmp_ln4463_1&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4463-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4671)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 3, Depth = 6."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_76" tag="SDX_KERNEL,SCHEDULE" content="Estimated clock period (4.599ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_74" tag="SDX_KERNEL,SCHEDULE" content="The critical path in module &apos;update_knn1&apos; consists of the following:
+	&apos;icmp&apos; operation (&apos;icmp_ln4149&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4149-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657) [183]  (1.66 ns)
+	multiplexor before &apos;phi&apos; operation (&apos;knn_set_4_load_130&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4141-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657) with incoming values : (&apos;zext_ln4132_1&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4132-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657) (&apos;trunc_ln4141_3&apos;, ../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4141-&gt;../../input_files/hls_src/dg_reg/sdsoc/digitrec.cpp:4657) [213]  (1.77 ns)
+	blocking operation 1.17 ns on control path)"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.82 seconds; current allocated memory: 166.400 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.37 seconds; current allocated memory: 167.805 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;popcount&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;popcount&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.57 seconds; current allocated memory: 171.921 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;update_knn1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;update_knn1/Input_1_V_V&apos; to &apos;ap_hs&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;update_knn1/Output_1_V_V&apos; to &apos;ap_hs&apos; (register)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;update_knn1&apos; to &apos;ap_ctrl_hs&apos;."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;index&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;update_knn1_training_set_V&apos; to &apos;update_knn1_trainbkb&apos; due to the length limit 20"/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_0&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_1&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_2&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_3&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_4&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;knn_set_5&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;update_knn1_mul_15s_2ns_15_2_1&apos; to &apos;update_knn1_mul_1cud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;update_knn1_mul_mul_17ns_15ns_32_3_1&apos; to &apos;update_knn1_mul_mdEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;update_knn1_mul_1cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;update_knn1_mul_mdEe&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;update_knn1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 4.74 seconds; current allocated memory: 184.203 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-790]" key="HLS 200-790" tag="LOOP,SDX_LOOP" content="**** Loop Constraint Status: All loop constraints were NOT satisfied."/>
+	<Message severity="INFO" prefix="[HLS 200-789]" key="HLS 200-789" tag="THROUGHPUT,SDX_KERNEL" content="**** Estimated Fmax: 217.44 MHz"/>
+	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;update_knn1_mul_1cud_MulnS_0&apos;"/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;update_knn1_trainbkb_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:56 ; elapsed = 00:01:45 . Memory (MB): peak = 933.000 ; gain = 526.211 ; free physical = 118324 ; free virtual = 141956"/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for update_knn1."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for update_knn1."/>
+</Messages>

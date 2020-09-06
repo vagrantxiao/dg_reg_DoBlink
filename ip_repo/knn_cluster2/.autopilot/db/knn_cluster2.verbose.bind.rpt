@@ -1,0 +1,1334 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_cluster2'
+================================================================
+* Date:           Sun Sep  6 16:13:22 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        dg_reg
+* Solution:       knn_cluster2
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.677 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-------+----------+
+    |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline |
+    |   min   |   max   |    min   |    max   | min |  max  |   Type   |
+    +---------+---------+----------+----------+-----+-------+----------+
+    |   166134|   205738| 1.661 ms | 2.057 ms |  495|  54497| dataflow |
+    +---------+---------+----------+----------+-----+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+--------------+---------+---------+----------+----------+-----+-------+---------+
+        |                         |              |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
+        |         Instance        |    Module    |   min   |   max   |    min   |    max   | min |  max  |   Type  |
+        +-------------------------+--------------+---------+---------+----------+----------+-----+-------+---------+
+        |grp_update_knn10_fu_152  |update_knn10  |      494|    40098| 4.940 us | 0.401 ms |  494|  40098|   none  |
+        |grp_update_knn6_fu_175   |update_knn6   |      493|    54496| 4.930 us | 0.545 ms |  493|  54496|   none  |
+        |grp_update_knn7_fu_198   |update_knn7   |      493|    50896| 4.930 us | 0.509 ms |  493|  50896|   none  |
+        |grp_update_knn8_fu_220   |update_knn8   |      493|    47296| 4.930 us | 0.473 ms |  493|  47296|   none  |
+        |grp_update_knn9_fu_242   |update_knn9   |      493|    43696| 4.930 us | 0.437 ms |  493|  43696|   none  |
+        +-------------------------+--------------+---------+---------+----------+----------+-----+-------+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 10, States = { 1 2 3 4 5 6 7 8 9 10 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.63>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%knn_out1_V_V = alloca i32, align 4" [dg_reg/src/sdsoc/digitrec.cpp:7622]   --->   Operation 11 'alloca' 'knn_out1_V_V' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.50> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 1024> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%knn_out2_V_V = alloca i32, align 4" [dg_reg/src/sdsoc/digitrec.cpp:7625]   --->   Operation 12 'alloca' 'knn_out2_V_V' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.50> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 1024> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%knn_out3_V_V = alloca i32, align 4" [dg_reg/src/sdsoc/digitrec.cpp:7628]   --->   Operation 13 'alloca' 'knn_out3_V_V' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.50> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 1024> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%knn_out4_V_V = alloca i32, align 4" [dg_reg/src/sdsoc/digitrec.cpp:7631]   --->   Operation 14 'alloca' 'knn_out4_V_V' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.50> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 1024> <FIFO>
+ST_1 : Operation 15 [2/2] (3.63ns)   --->   "call fastcc void @update_knn6(i32* %Input_1_V_V, i32* %knn_out1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7635]   --->   Operation 15 'call' <Predicate = true> <Delay = 3.63> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 16 [1/2] (0.00ns)   --->   "call fastcc void @update_knn6(i32* %Input_1_V_V, i32* %knn_out1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7635]   --->   Operation 16 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 17 [2/2] (0.00ns)   --->   "call fastcc void @update_knn7(i32* %knn_out1_V_V, i32* %knn_out2_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7636]   --->   Operation 17 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 18 [1/2] (0.00ns)   --->   "call fastcc void @update_knn7(i32* %knn_out1_V_V, i32* %knn_out2_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7636]   --->   Operation 18 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 19 [2/2] (0.00ns)   --->   "call fastcc void @update_knn8(i32* %knn_out2_V_V, i32* %knn_out3_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7637]   --->   Operation 19 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 20 [1/2] (0.00ns)   --->   "call fastcc void @update_knn8(i32* %knn_out2_V_V, i32* %knn_out3_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7637]   --->   Operation 20 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 21 [2/2] (0.00ns)   --->   "call fastcc void @update_knn9(i32* %knn_out3_V_V, i32* %knn_out4_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7638]   --->   Operation 21 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 22 [1/2] (0.00ns)   --->   "call fastcc void @update_knn9(i32* %knn_out3_V_V, i32* %knn_out4_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7638]   --->   Operation 22 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @update_knn10(i32* %knn_out4_V_V, i32* %Output_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7639]   --->   Operation 23 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, i32 0, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:7616]   --->   Operation 24 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %Input_1_V_V), !map !114"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %Output_1_V_V), !map !120"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @knn_cluster2_str) nounwind"   --->   Operation 27 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 28 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @knn_out1_OC_V_OC_V_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i32* %knn_out1_V_V, i32* %knn_out1_V_V)"   --->   Operation 28 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %knn_out1_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 29 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 30 [1/1] (0.00ns)   --->   "%empty_44 = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @knn_out2_OC_V_OC_V_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i32* %knn_out2_V_V, i32* %knn_out2_V_V)"   --->   Operation 30 'specchannel' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %knn_out2_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 31 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 32 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @knn_out3_OC_V_OC_V_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i32* %knn_out3_V_V, i32* %knn_out3_V_V)"   --->   Operation 32 'specchannel' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %knn_out3_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 33 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 34 [1/1] (0.00ns)   --->   "%empty_46 = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @knn_out4_OC_V_OC_V_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i32* %knn_out4_V_V, i32* %knn_out4_V_V)"   --->   Operation 34 'specchannel' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %knn_out4_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 35 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Input_1_V_V, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:7614]   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Output_1_V_V, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:7615]   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 38 [1/2] (0.00ns)   --->   "call fastcc void @update_knn10(i32* %knn_out4_V_V, i32* %Output_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:7639]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 39 [1/1] (0.00ns)   --->   "ret void" [dg_reg/src/sdsoc/digitrec.cpp:7641]   --->   Operation 39 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ Input_1_V_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_hs:ce=0
+Port [ Output_1_V_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_hs:ce=0
+Port [ index_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ training_set_V_7]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ knn_set_5_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_5_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_5_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_5_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_5_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_5_5]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ index_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ training_set_V_6]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ knn_set_6_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_6_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_6_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_6_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_6_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_6_5]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ index_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ training_set_V_5]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ knn_set_7_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_7_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_7_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_7_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_7_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_7_5]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ index]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ training_set_V_4]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ knn_set_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ index_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ training_set_V]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ knn_set_4_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4_3]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4_4]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ knn_set_4_5]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+knn_out1_V_V                (alloca              ) [ 01111111111]
+knn_out2_V_V                (alloca              ) [ 00111111111]
+knn_out3_V_V                (alloca              ) [ 00111111111]
+knn_out4_V_V                (alloca              ) [ 00111111111]
+call_ln7635                 (call                ) [ 00000000000]
+call_ln7636                 (call                ) [ 00000000000]
+call_ln7637                 (call                ) [ 00000000000]
+call_ln7638                 (call                ) [ 00000000000]
+specdataflowpipeline_ln7616 (specdataflowpipeline) [ 00000000000]
+specbitsmap_ln0             (specbitsmap         ) [ 00000000000]
+specbitsmap_ln0             (specbitsmap         ) [ 00000000000]
+spectopmodule_ln0           (spectopmodule       ) [ 00000000000]
+empty                       (specchannel         ) [ 00000000000]
+specinterface_ln0           (specinterface       ) [ 00000000000]
+empty_44                    (specchannel         ) [ 00000000000]
+specinterface_ln0           (specinterface       ) [ 00000000000]
+empty_45                    (specchannel         ) [ 00000000000]
+specinterface_ln0           (specinterface       ) [ 00000000000]
+empty_46                    (specchannel         ) [ 00000000000]
+specinterface_ln0           (specinterface       ) [ 00000000000]
+specinterface_ln7614        (specinterface       ) [ 00000000000]
+specinterface_ln7615        (specinterface       ) [ 00000000000]
+call_ln7639                 (call                ) [ 00000000000]
+ret_ln7641                  (ret                 ) [ 00000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="Input_1_V_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Input_1_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="Output_1_V_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Output_1_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="index_3">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="index_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="training_set_V_7">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="training_set_V_7"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="knn_set_5_0">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="knn_set_5_1">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="knn_set_5_2">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="knn_set_5_3">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="knn_set_5_4">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="knn_set_5_5">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_5_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="index_2">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="index_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="training_set_V_6">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="training_set_V_6"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="knn_set_6_0">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="knn_set_6_1">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="knn_set_6_2">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="knn_set_6_3">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="knn_set_6_4">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="knn_set_6_5">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_6_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="index_1">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="index_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="training_set_V_5">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="training_set_V_5"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="knn_set_7_0">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="knn_set_7_1">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="knn_set_7_2">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="knn_set_7_3">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="knn_set_7_4">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="knn_set_7_5">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_7_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="index">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="index"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="training_set_V_4">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="training_set_V_4"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="knn_set_0">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="knn_set_1">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="knn_set_2">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="knn_set_3">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="knn_set_4">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="knn_set">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="index_4">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="index_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="training_set_V">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="training_set_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="knn_set_4_0">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1000" name="knn_set_4_1">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1000" name="knn_set_4_2">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1000" name="knn_set_4_3">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1000" name="knn_set_4_4">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1000" name="knn_set_4_5">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_set_4_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="update_knn6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="update_knn7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="update_knn8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="update_knn9"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="update_knn10"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1001" name="const_108">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_cluster2_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1001" name="const_110">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1001" name="const_112">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_out1_OC_V_OC_V_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1001" name="const_114">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1001" name="const_116">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1001" name="const_118">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1001" name="const_120">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1001" name="const_122">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1001" name="const_124">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1001" name="const_126">
+<pin_list>
+<pin id="127" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="128" class="1001" name="const_128">
+<pin_list>
+<pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_out2_OC_V_OC_V_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="130" class="1001" name="const_130">
+<pin_list>
+<pin id="131" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_out3_OC_V_OC_V_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="132" class="1001" name="const_132">
+<pin_list>
+<pin id="133" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="knn_out4_OC_V_OC_V_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="134" class="1001" name="const_134">
+<pin_list>
+<pin id="135" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="136" class="1004" name="knn_out1_V_V_fu_136">
+<pin_list>
+<pin id="137" dir="0" index="0" bw="1" slack="0"/>
+<pin id="138" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="knn_out1_V_V/1 "/>
+</bind>
+</comp>
+
+<comp id="140" class="1004" name="knn_out2_V_V_fu_140">
+<pin_list>
+<pin id="141" dir="0" index="0" bw="1" slack="0"/>
+<pin id="142" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="knn_out2_V_V/1 "/>
+</bind>
+</comp>
+
+<comp id="144" class="1004" name="knn_out3_V_V_fu_144">
+<pin_list>
+<pin id="145" dir="0" index="0" bw="1" slack="0"/>
+<pin id="146" dir="1" index="1" bw="32" slack="4"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="knn_out3_V_V/1 "/>
+</bind>
+</comp>
+
+<comp id="148" class="1004" name="knn_out4_V_V_fu_148">
+<pin_list>
+<pin id="149" dir="0" index="0" bw="1" slack="0"/>
+<pin id="150" dir="1" index="1" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="knn_out4_V_V/1 "/>
+</bind>
+</comp>
+
+<comp id="152" class="1004" name="grp_update_knn10_fu_152">
+<pin_list>
+<pin id="153" dir="0" index="0" bw="0" slack="0"/>
+<pin id="154" dir="0" index="1" bw="32" slack="8"/>
+<pin id="155" dir="0" index="2" bw="32" slack="0"/>
+<pin id="156" dir="0" index="3" bw="1" slack="0"/>
+<pin id="157" dir="0" index="4" bw="256" slack="0"/>
+<pin id="158" dir="0" index="5" bw="11" slack="0"/>
+<pin id="159" dir="0" index="6" bw="11" slack="0"/>
+<pin id="160" dir="0" index="7" bw="11" slack="0"/>
+<pin id="161" dir="0" index="8" bw="11" slack="0"/>
+<pin id="162" dir="0" index="9" bw="11" slack="0"/>
+<pin id="163" dir="0" index="10" bw="11" slack="0"/>
+<pin id="164" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7639/9 "/>
+</bind>
+</comp>
+
+<comp id="175" class="1004" name="grp_update_knn6_fu_175">
+<pin_list>
+<pin id="176" dir="0" index="0" bw="0" slack="0"/>
+<pin id="177" dir="0" index="1" bw="32" slack="0"/>
+<pin id="178" dir="0" index="2" bw="32" slack="0"/>
+<pin id="179" dir="0" index="3" bw="1" slack="0"/>
+<pin id="180" dir="0" index="4" bw="256" slack="0"/>
+<pin id="181" dir="0" index="5" bw="11" slack="0"/>
+<pin id="182" dir="0" index="6" bw="11" slack="0"/>
+<pin id="183" dir="0" index="7" bw="11" slack="0"/>
+<pin id="184" dir="0" index="8" bw="11" slack="0"/>
+<pin id="185" dir="0" index="9" bw="11" slack="0"/>
+<pin id="186" dir="0" index="10" bw="11" slack="0"/>
+<pin id="187" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7635/1 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="grp_update_knn7_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="0" slack="0"/>
+<pin id="200" dir="0" index="1" bw="32" slack="2"/>
+<pin id="201" dir="0" index="2" bw="32" slack="2"/>
+<pin id="202" dir="0" index="3" bw="1" slack="0"/>
+<pin id="203" dir="0" index="4" bw="256" slack="0"/>
+<pin id="204" dir="0" index="5" bw="11" slack="0"/>
+<pin id="205" dir="0" index="6" bw="11" slack="0"/>
+<pin id="206" dir="0" index="7" bw="11" slack="0"/>
+<pin id="207" dir="0" index="8" bw="11" slack="0"/>
+<pin id="208" dir="0" index="9" bw="11" slack="0"/>
+<pin id="209" dir="0" index="10" bw="11" slack="0"/>
+<pin id="210" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7636/3 "/>
+</bind>
+</comp>
+
+<comp id="220" class="1004" name="grp_update_knn8_fu_220">
+<pin_list>
+<pin id="221" dir="0" index="0" bw="0" slack="0"/>
+<pin id="222" dir="0" index="1" bw="32" slack="4"/>
+<pin id="223" dir="0" index="2" bw="32" slack="4"/>
+<pin id="224" dir="0" index="3" bw="1" slack="0"/>
+<pin id="225" dir="0" index="4" bw="256" slack="0"/>
+<pin id="226" dir="0" index="5" bw="11" slack="0"/>
+<pin id="227" dir="0" index="6" bw="11" slack="0"/>
+<pin id="228" dir="0" index="7" bw="11" slack="0"/>
+<pin id="229" dir="0" index="8" bw="11" slack="0"/>
+<pin id="230" dir="0" index="9" bw="11" slack="0"/>
+<pin id="231" dir="0" index="10" bw="11" slack="0"/>
+<pin id="232" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7637/5 "/>
+</bind>
+</comp>
+
+<comp id="242" class="1004" name="grp_update_knn9_fu_242">
+<pin_list>
+<pin id="243" dir="0" index="0" bw="0" slack="0"/>
+<pin id="244" dir="0" index="1" bw="32" slack="6"/>
+<pin id="245" dir="0" index="2" bw="32" slack="6"/>
+<pin id="246" dir="0" index="3" bw="1" slack="0"/>
+<pin id="247" dir="0" index="4" bw="256" slack="0"/>
+<pin id="248" dir="0" index="5" bw="11" slack="0"/>
+<pin id="249" dir="0" index="6" bw="11" slack="0"/>
+<pin id="250" dir="0" index="7" bw="11" slack="0"/>
+<pin id="251" dir="0" index="8" bw="11" slack="0"/>
+<pin id="252" dir="0" index="9" bw="11" slack="0"/>
+<pin id="253" dir="0" index="10" bw="11" slack="0"/>
+<pin id="254" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7638/7 "/>
+</bind>
+</comp>
+
+<comp id="264" class="1005" name="knn_out1_V_V_reg_264">
+<pin_list>
+<pin id="265" dir="0" index="0" bw="32" slack="0"/>
+<pin id="266" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="knn_out1_V_V "/>
+</bind>
+</comp>
+
+<comp id="270" class="1005" name="knn_out2_V_V_reg_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="32" slack="2"/>
+<pin id="272" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="knn_out2_V_V "/>
+</bind>
+</comp>
+
+<comp id="276" class="1005" name="knn_out3_V_V_reg_276">
+<pin_list>
+<pin id="277" dir="0" index="0" bw="32" slack="4"/>
+<pin id="278" dir="1" index="1" bw="32" slack="4"/>
+</pin_list>
+<bind>
+<opset="knn_out3_V_V "/>
+</bind>
+</comp>
+
+<comp id="282" class="1005" name="knn_out4_V_V_reg_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="32" slack="6"/>
+<pin id="284" dir="1" index="1" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opset="knn_out4_V_V "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="139"><net_src comp="84" pin="0"/><net_sink comp="136" pin=0"/></net>
+
+<net id="143"><net_src comp="84" pin="0"/><net_sink comp="140" pin=0"/></net>
+
+<net id="147"><net_src comp="84" pin="0"/><net_sink comp="144" pin=0"/></net>
+
+<net id="151"><net_src comp="84" pin="0"/><net_sink comp="148" pin=0"/></net>
+
+<net id="165"><net_src comp="94" pin="0"/><net_sink comp="152" pin=0"/></net>
+
+<net id="166"><net_src comp="2" pin="0"/><net_sink comp="152" pin=2"/></net>
+
+<net id="167"><net_src comp="68" pin="0"/><net_sink comp="152" pin=3"/></net>
+
+<net id="168"><net_src comp="70" pin="0"/><net_sink comp="152" pin=4"/></net>
+
+<net id="169"><net_src comp="72" pin="0"/><net_sink comp="152" pin=5"/></net>
+
+<net id="170"><net_src comp="74" pin="0"/><net_sink comp="152" pin=6"/></net>
+
+<net id="171"><net_src comp="76" pin="0"/><net_sink comp="152" pin=7"/></net>
+
+<net id="172"><net_src comp="78" pin="0"/><net_sink comp="152" pin=8"/></net>
+
+<net id="173"><net_src comp="80" pin="0"/><net_sink comp="152" pin=9"/></net>
+
+<net id="174"><net_src comp="82" pin="0"/><net_sink comp="152" pin=10"/></net>
+
+<net id="188"><net_src comp="86" pin="0"/><net_sink comp="175" pin=0"/></net>
+
+<net id="189"><net_src comp="0" pin="0"/><net_sink comp="175" pin=1"/></net>
+
+<net id="190"><net_src comp="4" pin="0"/><net_sink comp="175" pin=3"/></net>
+
+<net id="191"><net_src comp="6" pin="0"/><net_sink comp="175" pin=4"/></net>
+
+<net id="192"><net_src comp="8" pin="0"/><net_sink comp="175" pin=5"/></net>
+
+<net id="193"><net_src comp="10" pin="0"/><net_sink comp="175" pin=6"/></net>
+
+<net id="194"><net_src comp="12" pin="0"/><net_sink comp="175" pin=7"/></net>
+
+<net id="195"><net_src comp="14" pin="0"/><net_sink comp="175" pin=8"/></net>
+
+<net id="196"><net_src comp="16" pin="0"/><net_sink comp="175" pin=9"/></net>
+
+<net id="197"><net_src comp="18" pin="0"/><net_sink comp="175" pin=10"/></net>
+
+<net id="211"><net_src comp="88" pin="0"/><net_sink comp="198" pin=0"/></net>
+
+<net id="212"><net_src comp="20" pin="0"/><net_sink comp="198" pin=3"/></net>
+
+<net id="213"><net_src comp="22" pin="0"/><net_sink comp="198" pin=4"/></net>
+
+<net id="214"><net_src comp="24" pin="0"/><net_sink comp="198" pin=5"/></net>
+
+<net id="215"><net_src comp="26" pin="0"/><net_sink comp="198" pin=6"/></net>
+
+<net id="216"><net_src comp="28" pin="0"/><net_sink comp="198" pin=7"/></net>
+
+<net id="217"><net_src comp="30" pin="0"/><net_sink comp="198" pin=8"/></net>
+
+<net id="218"><net_src comp="32" pin="0"/><net_sink comp="198" pin=9"/></net>
+
+<net id="219"><net_src comp="34" pin="0"/><net_sink comp="198" pin=10"/></net>
+
+<net id="233"><net_src comp="90" pin="0"/><net_sink comp="220" pin=0"/></net>
+
+<net id="234"><net_src comp="36" pin="0"/><net_sink comp="220" pin=3"/></net>
+
+<net id="235"><net_src comp="38" pin="0"/><net_sink comp="220" pin=4"/></net>
+
+<net id="236"><net_src comp="40" pin="0"/><net_sink comp="220" pin=5"/></net>
+
+<net id="237"><net_src comp="42" pin="0"/><net_sink comp="220" pin=6"/></net>
+
+<net id="238"><net_src comp="44" pin="0"/><net_sink comp="220" pin=7"/></net>
+
+<net id="239"><net_src comp="46" pin="0"/><net_sink comp="220" pin=8"/></net>
+
+<net id="240"><net_src comp="48" pin="0"/><net_sink comp="220" pin=9"/></net>
+
+<net id="241"><net_src comp="50" pin="0"/><net_sink comp="220" pin=10"/></net>
+
+<net id="255"><net_src comp="92" pin="0"/><net_sink comp="242" pin=0"/></net>
+
+<net id="256"><net_src comp="52" pin="0"/><net_sink comp="242" pin=3"/></net>
+
+<net id="257"><net_src comp="54" pin="0"/><net_sink comp="242" pin=4"/></net>
+
+<net id="258"><net_src comp="56" pin="0"/><net_sink comp="242" pin=5"/></net>
+
+<net id="259"><net_src comp="58" pin="0"/><net_sink comp="242" pin=6"/></net>
+
+<net id="260"><net_src comp="60" pin="0"/><net_sink comp="242" pin=7"/></net>
+
+<net id="261"><net_src comp="62" pin="0"/><net_sink comp="242" pin=8"/></net>
+
+<net id="262"><net_src comp="64" pin="0"/><net_sink comp="242" pin=9"/></net>
+
+<net id="263"><net_src comp="66" pin="0"/><net_sink comp="242" pin=10"/></net>
+
+<net id="267"><net_src comp="136" pin="1"/><net_sink comp="264" pin=0"/></net>
+
+<net id="268"><net_src comp="264" pin="1"/><net_sink comp="175" pin=2"/></net>
+
+<net id="269"><net_src comp="264" pin="1"/><net_sink comp="198" pin=1"/></net>
+
+<net id="273"><net_src comp="140" pin="1"/><net_sink comp="270" pin=0"/></net>
+
+<net id="274"><net_src comp="270" pin="1"/><net_sink comp="198" pin=2"/></net>
+
+<net id="275"><net_src comp="270" pin="1"/><net_sink comp="220" pin=1"/></net>
+
+<net id="279"><net_src comp="144" pin="1"/><net_sink comp="276" pin=0"/></net>
+
+<net id="280"><net_src comp="276" pin="1"/><net_sink comp="220" pin=2"/></net>
+
+<net id="281"><net_src comp="276" pin="1"/><net_sink comp="242" pin=1"/></net>
+
+<net id="285"><net_src comp="148" pin="1"/><net_sink comp="282" pin=0"/></net>
+
+<net id="286"><net_src comp="282" pin="1"/><net_sink comp="242" pin=2"/></net>
+
+<net id="287"><net_src comp="282" pin="1"/><net_sink comp="152" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: Output_1_V_V | {9 10 }
+	Port: index_3 | {1 2 }
+	Port: training_set_V_7 | {1 2 }
+	Port: knn_set_5_0 | {1 2 }
+	Port: knn_set_5_1 | {1 2 }
+	Port: knn_set_5_2 | {1 2 }
+	Port: knn_set_5_3 | {1 2 }
+	Port: knn_set_5_4 | {1 2 }
+	Port: knn_set_5_5 | {1 2 }
+	Port: index_2 | {3 4 }
+	Port: training_set_V_6 | {3 4 }
+	Port: knn_set_6_0 | {3 4 }
+	Port: knn_set_6_1 | {3 4 }
+	Port: knn_set_6_2 | {3 4 }
+	Port: knn_set_6_3 | {3 4 }
+	Port: knn_set_6_4 | {3 4 }
+	Port: knn_set_6_5 | {3 4 }
+	Port: index_1 | {5 6 }
+	Port: training_set_V_5 | {5 6 }
+	Port: knn_set_7_0 | {5 6 }
+	Port: knn_set_7_1 | {5 6 }
+	Port: knn_set_7_2 | {5 6 }
+	Port: knn_set_7_3 | {5 6 }
+	Port: knn_set_7_4 | {5 6 }
+	Port: knn_set_7_5 | {5 6 }
+	Port: index | {7 8 }
+	Port: training_set_V_4 | {7 8 }
+	Port: knn_set_0 | {7 8 }
+	Port: knn_set_1 | {7 8 }
+	Port: knn_set_2 | {7 8 }
+	Port: knn_set_3 | {7 8 }
+	Port: knn_set_4 | {7 8 }
+	Port: knn_set | {7 8 }
+	Port: index_4 | {9 10 }
+	Port: training_set_V | {9 10 }
+	Port: knn_set_4_0 | {9 10 }
+	Port: knn_set_4_1 | {9 10 }
+	Port: knn_set_4_2 | {9 10 }
+	Port: knn_set_4_3 | {9 10 }
+	Port: knn_set_4_4 | {9 10 }
+	Port: knn_set_4_5 | {9 10 }
+ - Input state : 
+	Port: knn_cluster2 : Input_1_V_V | {1 2 }
+	Port: knn_cluster2 : index_3 | {1 2 }
+	Port: knn_cluster2 : training_set_V_7 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_0 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_1 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_2 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_3 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_4 | {1 2 }
+	Port: knn_cluster2 : knn_set_5_5 | {1 2 }
+	Port: knn_cluster2 : index_2 | {3 4 }
+	Port: knn_cluster2 : training_set_V_6 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_0 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_1 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_2 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_3 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_4 | {3 4 }
+	Port: knn_cluster2 : knn_set_6_5 | {3 4 }
+	Port: knn_cluster2 : index_1 | {5 6 }
+	Port: knn_cluster2 : training_set_V_5 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_0 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_1 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_2 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_3 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_4 | {5 6 }
+	Port: knn_cluster2 : knn_set_7_5 | {5 6 }
+	Port: knn_cluster2 : index | {7 8 }
+	Port: knn_cluster2 : training_set_V_4 | {7 8 }
+	Port: knn_cluster2 : knn_set_0 | {7 8 }
+	Port: knn_cluster2 : knn_set_1 | {7 8 }
+	Port: knn_cluster2 : knn_set_2 | {7 8 }
+	Port: knn_cluster2 : knn_set_3 | {7 8 }
+	Port: knn_cluster2 : knn_set_4 | {7 8 }
+	Port: knn_cluster2 : knn_set | {7 8 }
+	Port: knn_cluster2 : index_4 | {9 10 }
+	Port: knn_cluster2 : training_set_V | {9 10 }
+	Port: knn_cluster2 : knn_set_4_0 | {9 10 }
+	Port: knn_cluster2 : knn_set_4_1 | {9 10 }
+	Port: knn_cluster2 : knn_set_4_2 | {9 10 }
+	Port: knn_cluster2 : knn_set_4_3 | {9 10 }
+	Port: knn_cluster2 : knn_set_4_4 | {9 10 }
+	Port: knn_cluster2 : knn_set_4_5 | {9 10 }
+  - Chain level:
+	State 1
+		call_ln7635 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-------------------------|---------|---------|---------|---------|
+| Operation|     Functional Unit     |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|-------------------------|---------|---------|---------|---------|
+|          | grp_update_knn10_fu_152 |    1    | 5.73335 |   1462  |   3083  |
+|          |  grp_update_knn6_fu_175 |    1    | 5.60985 |   1461  |   3068  |
+|   call   |  grp_update_knn7_fu_198 |    1    | 5.58515 |   1462  |   3065  |
+|          |  grp_update_knn8_fu_220 |    1    | 5.58515 |   1462  |   3065  |
+|          |  grp_update_knn9_fu_242 |    1    | 5.58515 |   1462  |   3065  |
+|----------|-------------------------|---------|---------|---------|---------|
+|   Total  |                         |    5    | 28.0986 |   7309  |  15346  |
+|----------|-------------------------|---------|---------|---------|---------|
+
+Memories:
++----------------+--------+--------+--------+--------+
+|                |  BRAM  |   FF   |   LUT  |  URAM  |
++----------------+--------+--------+--------+--------+
+| training_set_V |    8   |    0   |    0   |    0   |
+|training_set_V_4|    8   |    0   |    0   |    0   |
+|training_set_V_5|    8   |    0   |    0   |    0   |
+|training_set_V_6|    8   |    0   |    0   |    0   |
+|training_set_V_7|    8   |    0   |    0   |    0   |
++----------------+--------+--------+--------+--------+
+|      Total     |   40   |    0   |    0   |    0   |
++----------------+--------+--------+--------+--------+
+
+* Register list:
++--------------------+--------+
+|                    |   FF   |
++--------------------+--------+
+|knn_out1_V_V_reg_264|   32   |
+|knn_out2_V_V_reg_270|   32   |
+|knn_out3_V_V_reg_276|   32   |
+|knn_out4_V_V_reg_282|   32   |
++--------------------+--------+
+|        Total       |   128  |
++--------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    -   |    5   |   28   |  7309  |  15346 |    -   |
+|   Memory  |   40   |    -   |    -   |    0   |    0   |    0   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |   128  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |   40   |    5   |   28   |  7437  |  15346 |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

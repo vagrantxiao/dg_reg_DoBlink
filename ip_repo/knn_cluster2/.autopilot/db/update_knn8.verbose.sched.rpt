@@ -1,0 +1,904 @@
+
+
+================================================================
+== Vivado HLS Report for 'update_knn8'
+================================================================
+* Date:           Sun Sep  6 16:13:17 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        dg_reg
+* Solution:       knn_cluster2
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.677 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
+    |   min   |   max   |    min   |    max   | min |  max  |   Type  |
+    +---------+---------+----------+----------+-----+-------+---------+
+    |      493|    47296| 4.930 us | 0.473 ms |  493|  47296|   none  |
+    +---------+---------+----------+----------+-----+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name          |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- STORE_LOCAL                 |     3600|     3600|         9|          8|          1|   450|    yes   |
+        |- TRANSFER_LOOP               |    43200|    43200|         9|          8|          1|  5400|    yes   |
+        |- TRAINING_LOOP_LANES         |      460|      460|        12|          1|          1|   450|    yes   |
+        |- LANES_INSERTION_SORT_OUTER  |        6|        6|         2|          1|          1|     6|    yes   |
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 8, depth = 9
+  * Pipeline-1: initiation interval (II) = 8, depth = 9
+  * Pipeline-2: initiation interval (II) = 1, depth = 12
+  * Pipeline-3: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 59
+* Pipeline : 4
+  Pipeline-0 : II = 8, D = 9, States = { 2 3 4 5 6 7 8 9 10 }
+  Pipeline-1 : II = 8, D = 9, States = { 12 13 14 15 16 17 18 19 20 }
+  Pipeline-2 : II = 1, D = 12, States = { 37 38 39 40 41 42 43 44 45 46 47 48 }
+  Pipeline-3 : II = 1, D = 2, States = { 50 51 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 21 2 
+2 --> 11 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 2 
+11 --> 12 
+12 --> 21 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 12 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 49 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 37 
+49 --> 50 
+50 --> 52 51 
+51 --> 50 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Output_1_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 60 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Input_1_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 61 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%index_1_load = load i1* @index_1, align 1" [dg_reg/src/sdsoc/digitrec.cpp:5636]   --->   Operation 62 'load' 'index_1_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %index_1_load, label %._crit_edge1606, label %.preheader1603.preheader" [dg_reg/src/sdsoc/digitrec.cpp:5636]   --->   Operation 63 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (1.76ns)   --->   "br label %.preheader1603" [dg_reg/src/sdsoc/digitrec.cpp:5639]   --->   Operation 64 'br' <Predicate = (!index_1_load)> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.82>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%i_0 = phi i9 [ %i, %STORE_LOCAL ], [ 0, %.preheader1603.preheader ]"   --->   Operation 65 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (1.66ns)   --->   "%icmp_ln5639 = icmp eq i9 %i_0, -62" [dg_reg/src/sdsoc/digitrec.cpp:5639]   --->   Operation 66 'icmp' 'icmp_ln5639' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 450, i64 450, i64 450)"   --->   Operation 67 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (1.82ns)   --->   "%i = add i9 %i_0, 1" [dg_reg/src/sdsoc/digitrec.cpp:5639]   --->   Operation 68 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "br i1 %icmp_ln5639, label %.preheader1602.preheader, label %STORE_LOCAL" [dg_reg/src/sdsoc/digitrec.cpp:5639]   --->   Operation 69 'br' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.63>
+ST_3 : Operation 70 [1/1] (3.63ns)   --->   "%tmp_V = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5642]   --->   Operation 70 'read' 'tmp_V' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 4 <SV = 3> <Delay = 3.63>
+ST_4 : Operation 71 [1/1] (3.63ns)   --->   "%tmp_V_42 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5643]   --->   Operation 71 'read' 'tmp_V_42' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 5 <SV = 4> <Delay = 3.63>
+ST_5 : Operation 72 [1/1] (3.63ns)   --->   "%tmp_V_43 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5644]   --->   Operation 72 'read' 'tmp_V_43' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 6 <SV = 5> <Delay = 3.63>
+ST_6 : Operation 73 [1/1] (3.63ns)   --->   "%tmp_V_44 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5645]   --->   Operation 73 'read' 'tmp_V_44' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 7 <SV = 6> <Delay = 3.63>
+ST_7 : Operation 74 [1/1] (3.63ns)   --->   "%tmp_V_45 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5646]   --->   Operation 74 'read' 'tmp_V_45' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 8 <SV = 7> <Delay = 3.63>
+ST_8 : Operation 75 [1/1] (3.63ns)   --->   "%tmp_V_46 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5647]   --->   Operation 75 'read' 'tmp_V_46' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 9 <SV = 8> <Delay = 3.63>
+ST_9 : Operation 76 [1/1] (3.63ns)   --->   "%tmp_V_47 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5648]   --->   Operation 76 'read' 'tmp_V_47' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 10 <SV = 9> <Delay = 6.88>
+ST_10 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str145) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5640]   --->   Operation 77 'specloopname' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 78 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str145)" [dg_reg/src/sdsoc/digitrec.cpp:5640]   --->   Operation 78 'specregionbegin' 'tmp' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5641]   --->   Operation 79 'specpipeline' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 80 [1/1] (0.00ns)   --->   "%zext_ln5642 = zext i9 %i_0 to i64" [dg_reg/src/sdsoc/digitrec.cpp:5642]   --->   Operation 80 'zext' 'zext_ln5642' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 81 [1/1] (0.00ns)   --->   "%training_set_V_5_add = getelementptr [450 x i256]* @training_set_V_5, i64 0, i64 %zext_ln5642" [dg_reg/src/sdsoc/digitrec.cpp:5642]   --->   Operation 81 'getelementptr' 'training_set_V_5_add' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 82 [1/1] (3.63ns)   --->   "%tmp_V_48 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5649]   --->   Operation 82 'read' 'tmp_V_48' <Predicate = (!icmp_ln5639)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_10 : Operation 83 [1/1] (0.00ns)   --->   "%p_Result_s = call i256 @_ssdm_op_BitConcatenate.i256.i32.i32.i32.i32.i32.i32.i32.i32(i32 %tmp_V, i32 %tmp_V_42, i32 %tmp_V_43, i32 %tmp_V_44, i32 %tmp_V_45, i32 %tmp_V_46, i32 %tmp_V_47, i32 %tmp_V_48)" [dg_reg/src/sdsoc/digitrec.cpp:5649]   --->   Operation 83 'bitconcatenate' 'p_Result_s' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 84 [1/1] (3.25ns)   --->   "store i256 %p_Result_s, i256* %training_set_V_5_add, align 32" [dg_reg/src/sdsoc/digitrec.cpp:5649]   --->   Operation 84 'store' <Predicate = (!icmp_ln5639)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 256> <Depth = 450> <RAM>
+ST_10 : Operation 85 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str145, i32 %tmp)" [dg_reg/src/sdsoc/digitrec.cpp:5650]   --->   Operation 85 'specregionend' 'empty_15' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+ST_10 : Operation 86 [1/1] (0.00ns)   --->   "br label %.preheader1603" [dg_reg/src/sdsoc/digitrec.cpp:5639]   --->   Operation 86 'br' <Predicate = (!icmp_ln5639)> <Delay = 0.00>
+
+State 11 <SV = 2> <Delay = 1.76>
+ST_11 : Operation 87 [1/1] (1.76ns)   --->   "br label %.preheader1602" [dg_reg/src/sdsoc/digitrec.cpp:5653]   --->   Operation 87 'br' <Predicate = true> <Delay = 1.76>
+
+State 12 <SV = 3> <Delay = 2.09>
+ST_12 : Operation 88 [1/1] (0.00ns)   --->   "%i1_0 = phi i13 [ %i_3, %TRANSFER_LOOP ], [ 0, %.preheader1602.preheader ]"   --->   Operation 88 'phi' 'i1_0' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 89 [1/1] (2.09ns)   --->   "%icmp_ln5653 = icmp eq i13 %i1_0, -2792" [dg_reg/src/sdsoc/digitrec.cpp:5653]   --->   Operation 89 'icmp' 'icmp_ln5653' <Predicate = true> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 90 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5400, i64 5400, i64 5400)"   --->   Operation 90 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 91 [1/1] (1.67ns)   --->   "%i_3 = add i13 %i1_0, 1" [dg_reg/src/sdsoc/digitrec.cpp:5653]   --->   Operation 91 'add' 'i_3' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 92 [1/1] (0.00ns)   --->   "br i1 %icmp_ln5653, label %0, label %TRANSFER_LOOP" [dg_reg/src/sdsoc/digitrec.cpp:5653]   --->   Operation 92 'br' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 4> <Delay = 7.26>
+ST_13 : Operation 93 [1/1] (3.63ns)   --->   "%tmp_V_49 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5656]   --->   Operation 93 'read' 'tmp_V_49' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_13 : Operation 94 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_49)" [dg_reg/src/sdsoc/digitrec.cpp:5664]   --->   Operation 94 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 14 <SV = 5> <Delay = 7.26>
+ST_14 : Operation 95 [1/1] (3.63ns)   --->   "%tmp_V_50 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5657]   --->   Operation 95 'read' 'tmp_V_50' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_14 : Operation 96 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_50)" [dg_reg/src/sdsoc/digitrec.cpp:5665]   --->   Operation 96 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 15 <SV = 6> <Delay = 7.26>
+ST_15 : Operation 97 [1/1] (3.63ns)   --->   "%tmp_V_51 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5658]   --->   Operation 97 'read' 'tmp_V_51' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_15 : Operation 98 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_51)" [dg_reg/src/sdsoc/digitrec.cpp:5666]   --->   Operation 98 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 16 <SV = 7> <Delay = 7.26>
+ST_16 : Operation 99 [1/1] (3.63ns)   --->   "%tmp_V_52 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5659]   --->   Operation 99 'read' 'tmp_V_52' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_16 : Operation 100 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_52)" [dg_reg/src/sdsoc/digitrec.cpp:5667]   --->   Operation 100 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 17 <SV = 8> <Delay = 7.26>
+ST_17 : Operation 101 [1/1] (3.63ns)   --->   "%tmp_V_53 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5660]   --->   Operation 101 'read' 'tmp_V_53' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_17 : Operation 102 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_53)" [dg_reg/src/sdsoc/digitrec.cpp:5668]   --->   Operation 102 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 18 <SV = 9> <Delay = 7.26>
+ST_18 : Operation 103 [1/1] (3.63ns)   --->   "%tmp_V_54 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5661]   --->   Operation 103 'read' 'tmp_V_54' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_18 : Operation 104 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_54)" [dg_reg/src/sdsoc/digitrec.cpp:5669]   --->   Operation 104 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 19 <SV = 10> <Delay = 7.26>
+ST_19 : Operation 105 [1/1] (3.63ns)   --->   "%tmp_V_55 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5662]   --->   Operation 105 'read' 'tmp_V_55' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_19 : Operation 106 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_55)" [dg_reg/src/sdsoc/digitrec.cpp:5670]   --->   Operation 106 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 20 <SV = 11> <Delay = 7.26>
+ST_20 : Operation 107 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str146) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5654]   --->   Operation 107 'specloopname' <Predicate = (!icmp_ln5653)> <Delay = 0.00>
+ST_20 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str146)" [dg_reg/src/sdsoc/digitrec.cpp:5654]   --->   Operation 108 'specregionbegin' 'tmp_7' <Predicate = (!icmp_ln5653)> <Delay = 0.00>
+ST_20 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5655]   --->   Operation 109 'specpipeline' <Predicate = (!icmp_ln5653)> <Delay = 0.00>
+ST_20 : Operation 110 [1/1] (3.63ns)   --->   "%tmp_V_56 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5663]   --->   Operation 110 'read' 'tmp_V_56' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_20 : Operation 111 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_56)" [dg_reg/src/sdsoc/digitrec.cpp:5671]   --->   Operation 111 'write' <Predicate = (!icmp_ln5653)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_20 : Operation 112 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str146, i32 %tmp_7)" [dg_reg/src/sdsoc/digitrec.cpp:5672]   --->   Operation 112 'specregionend' 'empty_17' <Predicate = (!icmp_ln5653)> <Delay = 0.00>
+ST_20 : Operation 113 [1/1] (0.00ns)   --->   "br label %.preheader1602" [dg_reg/src/sdsoc/digitrec.cpp:5653]   --->   Operation 113 'br' <Predicate = (!icmp_ln5653)> <Delay = 0.00>
+
+State 21 <SV = 4> <Delay = 7.26>
+ST_21 : Operation 114 [1/1] (0.00ns)   --->   "store i1 true, i1* @index_1, align 1" [dg_reg/src/sdsoc/digitrec.cpp:5674]   --->   Operation 114 'store' <Predicate = (!index_1_load)> <Delay = 0.00>
+ST_21 : Operation 115 [1/1] (0.00ns)   --->   "br label %._crit_edge1606" [dg_reg/src/sdsoc/digitrec.cpp:5675]   --->   Operation 115 'br' <Predicate = (!index_1_load)> <Delay = 0.00>
+ST_21 : Operation 116 [1/1] (3.63ns)   --->   "%tmp_V_57 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5678]   --->   Operation 116 'read' 'tmp_V_57' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_21 : Operation 117 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_57)" [dg_reg/src/sdsoc/digitrec.cpp:5686]   --->   Operation 117 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_21 : Operation 118 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_0, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 118 'store' <Predicate = true> <Delay = 1.76>
+ST_21 : Operation 119 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_1, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 119 'store' <Predicate = true> <Delay = 1.76>
+ST_21 : Operation 120 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_2, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 120 'store' <Predicate = true> <Delay = 1.76>
+ST_21 : Operation 121 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_3, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 121 'store' <Predicate = true> <Delay = 1.76>
+ST_21 : Operation 122 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_4, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 122 'store' <Predicate = true> <Delay = 1.76>
+ST_21 : Operation 123 [1/1] (1.76ns)   --->   "store i11 256, i11* @knn_set_7_5, align 2" [dg_reg/src/sdsoc/digitrec.cpp:5720]   --->   Operation 123 'store' <Predicate = true> <Delay = 1.76>
+
+State 22 <SV = 5> <Delay = 7.26>
+ST_22 : Operation 124 [1/1] (3.63ns)   --->   "%tmp_V_58 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5679]   --->   Operation 124 'read' 'tmp_V_58' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_22 : Operation 125 [1/1] (0.00ns)   --->   "%trunc_ln414 = trunc i32 %tmp_V_58 to i4" [dg_reg/src/sdsoc/digitrec.cpp:5685]   --->   Operation 125 'trunc' 'trunc_ln414' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 126 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_58)" [dg_reg/src/sdsoc/digitrec.cpp:5687]   --->   Operation 126 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 23 <SV = 6> <Delay = 7.26>
+ST_23 : Operation 127 [1/1] (3.63ns)   --->   "%tmp_V_59 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5680]   --->   Operation 127 'read' 'tmp_V_59' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_23 : Operation 128 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_59)" [dg_reg/src/sdsoc/digitrec.cpp:5688]   --->   Operation 128 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 24 <SV = 7> <Delay = 7.26>
+ST_24 : Operation 129 [1/1] (3.63ns)   --->   "%tmp_V_60 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5681]   --->   Operation 129 'read' 'tmp_V_60' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_24 : Operation 130 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_60)" [dg_reg/src/sdsoc/digitrec.cpp:5689]   --->   Operation 130 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 25 <SV = 8> <Delay = 7.26>
+ST_25 : Operation 131 [1/1] (3.63ns)   --->   "%tmp_V_61 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5682]   --->   Operation 131 'read' 'tmp_V_61' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_25 : Operation 132 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_61)" [dg_reg/src/sdsoc/digitrec.cpp:5690]   --->   Operation 132 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 26 <SV = 9> <Delay = 7.26>
+ST_26 : Operation 133 [1/1] (3.63ns)   --->   "%tmp_V_62 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5683]   --->   Operation 133 'read' 'tmp_V_62' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_26 : Operation 134 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_62)" [dg_reg/src/sdsoc/digitrec.cpp:5691]   --->   Operation 134 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 27 <SV = 10> <Delay = 7.26>
+ST_27 : Operation 135 [1/1] (3.63ns)   --->   "%tmp_V_63 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5684]   --->   Operation 135 'read' 'tmp_V_63' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_27 : Operation 136 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_63)" [dg_reg/src/sdsoc/digitrec.cpp:5692]   --->   Operation 136 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 28 <SV = 11> <Delay = 7.26>
+ST_28 : Operation 137 [1/1] (3.63ns)   --->   "%tmp_V_64 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5685]   --->   Operation 137 'read' 'tmp_V_64' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_28 : Operation 138 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_64)" [dg_reg/src/sdsoc/digitrec.cpp:5693]   --->   Operation 138 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 29 <SV = 12> <Delay = 3.63>
+ST_29 : Operation 139 [1/1] (3.63ns)   --->   "%tmp_V_133_0 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5699]   --->   Operation 139 'read' 'tmp_V_133_0' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 30 <SV = 13> <Delay = 3.63>
+ST_30 : Operation 140 [1/1] (3.63ns)   --->   "%tmp_V_77 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5700]   --->   Operation 140 'read' 'tmp_V_77' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 31 <SV = 14> <Delay = 3.63>
+ST_31 : Operation 141 [1/1] (3.63ns)   --->   "%tmp_V_78 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5701]   --->   Operation 141 'read' 'tmp_V_78' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 32 <SV = 15> <Delay = 3.63>
+ST_32 : Operation 142 [1/1] (3.63ns)   --->   "%tmp_V_79 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5702]   --->   Operation 142 'read' 'tmp_V_79' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 33 <SV = 16> <Delay = 3.63>
+ST_33 : Operation 143 [1/1] (3.63ns)   --->   "%tmp_V_137_0 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5703]   --->   Operation 143 'read' 'tmp_V_137_0' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 34 <SV = 17> <Delay = 3.63>
+ST_34 : Operation 144 [1/1] (3.63ns)   --->   "%tmp_V_80 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5704]   --->   Operation 144 'read' 'tmp_V_80' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 35 <SV = 18> <Delay = 3.63>
+ST_35 : Operation 145 [1/1] (3.63ns)   --->   "%tmp_V_81 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5705]   --->   Operation 145 'read' 'tmp_V_81' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 36 <SV = 19> <Delay = 3.63>
+ST_36 : Operation 146 [1/1] (3.63ns)   --->   "%tmp_V_82 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %Input_1_V_V)" [dg_reg/src/sdsoc/digitrec.cpp:5706]   --->   Operation 146 'read' 'tmp_V_82' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_36 : Operation 147 [1/1] (0.00ns)   --->   "%lhs_V = call i196 @_ssdm_op_BitConcatenate.i196.i4.i32.i32.i32.i32.i32.i32(i4 %trunc_ln414, i32 %tmp_V_59, i32 %tmp_V_60, i32 %tmp_V_61, i32 %tmp_V_62, i32 %tmp_V_63, i32 %tmp_V_64)" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 147 'bitconcatenate' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 148 [1/1] (1.76ns)   --->   "br label %1" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 148 'br' <Predicate = true> <Delay = 1.76>
+
+State 37 <SV = 20> <Delay = 8.14>
+ST_37 : Operation 149 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i9 [ 0, %._crit_edge1606 ], [ %add_ln5723, %LANES_end ]" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 149 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 150 [1/1] (0.00ns)   --->   "%j_0 = phi i2 [ 0, %._crit_edge1606 ], [ %select_ln5729_1, %LANES_end ]" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 150 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 151 [1/1] (0.00ns)   --->   "%i4_0 = phi i8 [ 0, %._crit_edge1606 ], [ %i_4, %LANES_end ]"   --->   Operation 151 'phi' 'i4_0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln5729 = zext i2 %j_0 to i3" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 152 'zext' 'zext_ln5729' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 153 [1/1] (0.00ns)   --->   "%trunc_ln5729 = trunc i2 %j_0 to i1" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 153 'trunc' 'trunc_ln5729' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 154 [1/1] (0.00ns)   --->   "%shl_ln = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %trunc_ln5729, i2 0)" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 154 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 155 [1/1] (1.65ns)   --->   "%sub_ln5729 = sub i3 %shl_ln, %zext_ln5729" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 155 'sub' 'sub_ln5729' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 156 [1/1] (1.13ns)   --->   "%icmp_ln4141 = icmp eq i3 %shl_ln, %zext_ln5729" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 156 'icmp' 'icmp_ln4141' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 157 [1/1] (1.66ns)   --->   "%icmp_ln5723 = icmp eq i9 %indvar_flatten, -62" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 157 'icmp' 'icmp_ln5723' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 158 [1/1] (1.82ns)   --->   "%add_ln5723 = add i9 1, %indvar_flatten" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 158 'add' 'add_ln5723' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 159 [1/1] (0.00ns)   --->   "br i1 %icmp_ln5723, label %.preheader95.preheader.preheader, label %LANES_begin" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 159 'br' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 160 [1/1] (1.55ns)   --->   "%icmp_ln5725 = icmp eq i8 %i4_0, -31" [dg_reg/src/sdsoc/digitrec.cpp:5725]   --->   Operation 160 'icmp' 'icmp_ln5725' <Predicate = (!icmp_ln5723)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 161 [1/1] (1.24ns)   --->   "%select_ln5729 = select i1 %icmp_ln5725, i8 0, i8 %i4_0" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 161 'select' 'select_ln5729' <Predicate = (!icmp_ln5723)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_37 : Operation 162 [1/1] (1.56ns)   --->   "%add_ln5723_1 = add i2 1, %j_0" [dg_reg/src/sdsoc/digitrec.cpp:5723]   --->   Operation 162 'add' 'add_ln5723_1' <Predicate = (!icmp_ln5723)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 163 [1/1] (0.00ns)   --->   "%zext_ln5729_1 = zext i2 %add_ln5723_1 to i3" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 163 'zext' 'zext_ln5729_1' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 164 [1/1] (0.99ns)   --->   "%select_ln5729_1 = select i1 %icmp_ln5725, i2 %add_ln5723_1, i2 %j_0" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 164 'select' 'select_ln5729_1' <Predicate = (!icmp_ln5723)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_37 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln5729_2 = zext i2 %select_ln5729_1 to i15" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 165 'zext' 'zext_ln5729_2' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 166 [1/1] (5.59ns)   --->   "%mul_ln5729 = mul i15 -14768, %zext_ln5729_2" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 166 'mul' 'mul_ln5729' <Predicate = (!icmp_ln5723)> <Delay = 5.59> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 5.59> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 167 [1/1] (0.00ns)   --->   "%trunc_ln5729_1 = trunc i2 %add_ln5723_1 to i1" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 167 'trunc' 'trunc_ln5729_1' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 168 [1/1] (0.00ns)   --->   "%shl_ln5729_mid1 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %trunc_ln5729_1, i2 0)" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 168 'bitconcatenate' 'shl_ln5729_mid1' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 169 [1/1] (1.65ns)   --->   "%sub_ln5729_1 = sub i3 %shl_ln5729_mid1, %zext_ln5729_1" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 169 'sub' 'sub_ln5729_1' <Predicate = (!icmp_ln5723)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 170 [1/1] (0.98ns)   --->   "%select_ln5729_2 = select i1 %icmp_ln5725, i3 %sub_ln5729_1, i3 %sub_ln5729" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 170 'select' 'select_ln5729_2' <Predicate = (!icmp_ln5723)> <Delay = 0.98> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_37 : Operation 171 [1/1] (1.13ns)   --->   "%icmp_ln4141_4 = icmp eq i3 %shl_ln5729_mid1, %zext_ln5729_1" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 171 'icmp' 'icmp_ln4141_4' <Predicate = (!icmp_ln5723)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 172 [1/1] (0.99ns)   --->   "%select_ln5729_3 = select i1 %icmp_ln5725, i1 %icmp_ln4141_4, i1 %icmp_ln4141" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 172 'select' 'select_ln5729_3' <Predicate = (!icmp_ln5723)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_37 : Operation 173 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([6 x i8]* @p_str89)" [dg_reg/src/sdsoc/digitrec.cpp:5726]   --->   Operation 173 'specregionbegin' 'tmp_s' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 174 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecRegionEnd([6 x i8]* @p_str89, i32 %tmp_s)" [dg_reg/src/sdsoc/digitrec.cpp:5730]   --->   Operation 174 'specregionend' 'empty_18' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_37 : Operation 175 [1/1] (1.91ns)   --->   "%i_4 = add i8 %select_ln5729, 1" [dg_reg/src/sdsoc/digitrec.cpp:5725]   --->   Operation 175 'add' 'i_4' <Predicate = (!icmp_ln5723)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 176 [1/1] (0.00ns)   --->   "br label %1"   --->   Operation 176 'br' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+
+State 38 <SV = 21> <Delay = 6.38>
+ST_38 : Operation 177 [1/1] (0.00ns)   --->   "%zext_ln5729_3 = zext i15 %mul_ln5729 to i32" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 177 'zext' 'zext_ln5729_3' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_38 : Operation 178 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln5729_1 = mul i32 52429, %zext_ln5729_3" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 178 'mul' 'mul_ln5729_1' <Predicate = (!icmp_ln5723)> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_38 : Operation 179 [1/1] (0.00ns)   --->   "%trunc_ln5729_mid2 = call i9 @_ssdm_op_PartSelect.i9.i32.i32.i32(i32 %mul_ln5729_1, i32 22, i32 30)" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 179 'partselect' 'trunc_ln5729_mid2' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+
+State 39 <SV = 22> <Delay = 5.07>
+ST_39 : Operation 180 [1/1] (0.00ns)   --->   "%zext_ln5725 = zext i8 %select_ln5729 to i9" [dg_reg/src/sdsoc/digitrec.cpp:5725]   --->   Operation 180 'zext' 'zext_ln5725' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_39 : Operation 181 [1/1] (1.82ns)   --->   "%add_ln5728 = add i9 %trunc_ln5729_mid2, %zext_ln5725" [dg_reg/src/sdsoc/digitrec.cpp:5728]   --->   Operation 181 'add' 'add_ln5728' <Predicate = (!icmp_ln5723)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 182 [1/1] (0.00ns)   --->   "%zext_ln5728 = zext i9 %add_ln5728 to i64" [dg_reg/src/sdsoc/digitrec.cpp:5728]   --->   Operation 182 'zext' 'zext_ln5728' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_39 : Operation 183 [1/1] (0.00ns)   --->   "%training_set_V_5_add_1 = getelementptr [450 x i256]* @training_set_V_5, i64 0, i64 %zext_ln5728" [dg_reg/src/sdsoc/digitrec.cpp:5728]   --->   Operation 183 'getelementptr' 'training_set_V_5_add_1' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_39 : Operation 184 [2/2] (3.25ns)   --->   "%training_instance_V = load i256* %training_set_V_5_add_1, align 32" [dg_reg/src/sdsoc/digitrec.cpp:5728]   --->   Operation 184 'load' 'training_instance_V' <Predicate = (!icmp_ln5723)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 256> <Depth = 450> <RAM>
+
+State 40 <SV = 23> <Delay = 4.29>
+ST_40 : Operation 185 [1/2] (3.25ns)   --->   "%training_instance_V = load i256* %training_set_V_5_add_1, align 32" [dg_reg/src/sdsoc/digitrec.cpp:5728]   --->   Operation 185 'load' 'training_instance_V' <Predicate = (!icmp_ln5723)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 256> <Depth = 450> <RAM>
+ST_40 : Operation 186 [1/1] (0.00ns)   --->   "%rhs_V = trunc i256 %training_instance_V to i196" [dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 186 'trunc' 'rhs_V' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_40 : Operation 187 [1/1] (1.03ns)   --->   "%ret_V = xor i196 %lhs_V, %rhs_V" [dg_reg/src/sdsoc/digitrec.cpp:4128->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 187 'xor' 'ret_V' <Predicate = (!icmp_ln5723)> <Delay = 1.03> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 24> <Delay = 7.02>
+ST_41 : Operation 188 [8/8] (7.02ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 188 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 7.02> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 25> <Delay = 8.67>
+ST_42 : Operation 189 [7/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 189 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 26> <Delay = 8.67>
+ST_43 : Operation 190 [6/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 190 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 27> <Delay = 8.67>
+ST_44 : Operation 191 [5/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 191 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 28> <Delay = 8.67>
+ST_45 : Operation 192 [4/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 192 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 29> <Delay = 8.67>
+ST_46 : Operation 193 [3/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 193 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 47 <SV = 30> <Delay = 8.67>
+ST_47 : Operation 194 [2/8] (8.67ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 194 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 8.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_47 : Operation 195 [1/1] (0.00ns)   --->   "%knn_set_7_0_load = load i11* @knn_set_7_0, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 195 'load' 'knn_set_7_0_load' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 196 [1/1] (0.00ns)   --->   "%knn_set_7_3_load = load i11* @knn_set_7_3, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 196 'load' 'knn_set_7_3_load' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 197 [1/1] (0.00ns)   --->   "%trunc_ln4141 = trunc i11 %knn_set_7_0_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 197 'trunc' 'trunc_ln4141' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 198 [1/1] (0.00ns)   --->   "%trunc_ln4141_6 = trunc i11 %knn_set_7_3_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 198 'trunc' 'trunc_ln4141_6' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 199 [1/1] (0.96ns)   --->   "%select_ln4141 = select i1 %select_ln5729_3, i9 %trunc_ln4141, i9 %trunc_ln4141_6" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 199 'select' 'select_ln4141' <Predicate = (!icmp_ln5723)> <Delay = 0.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_47 : Operation 200 [1/1] (0.00ns)   --->   "%knn_set_7_1_load = load i11* @knn_set_7_1, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 200 'load' 'knn_set_7_1_load' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 201 [1/1] (0.00ns)   --->   "%knn_set_7_4_load = load i11* @knn_set_7_4, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 201 'load' 'knn_set_7_4_load' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 202 [1/1] (0.00ns)   --->   "%trunc_ln4141_7 = trunc i11 %knn_set_7_1_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 202 'trunc' 'trunc_ln4141_7' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 203 [1/1] (0.00ns)   --->   "%trunc_ln4141_8 = trunc i11 %knn_set_7_4_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 203 'trunc' 'trunc_ln4141_8' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 204 [1/1] (0.96ns)   --->   "%select_ln4141_7 = select i1 %select_ln5729_3, i9 %trunc_ln4141_7, i9 %trunc_ln4141_8" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 204 'select' 'select_ln4141_7' <Predicate = (!icmp_ln5723)> <Delay = 0.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_47 : Operation 205 [1/1] (1.66ns)   --->   "%icmp_ln4141_1 = icmp ugt i9 %select_ln4141_7, %select_ln4141" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 205 'icmp' 'icmp_ln4141_1' <Predicate = (!icmp_ln5723)> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 206 [1/1] (0.96ns)   --->   "%select_ln4141_8 = select i1 %icmp_ln4141_1, i9 %select_ln4141_7, i9 %select_ln4141" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 206 'select' 'select_ln4141_8' <Predicate = (!icmp_ln5723)> <Delay = 0.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_47 : Operation 207 [1/1] (0.00ns)   --->   "%knn_set_7_2_load = load i11* @knn_set_7_2, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 207 'load' 'knn_set_7_2_load' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 208 [1/1] (0.00ns)   --->   "%knn_set_7_5_load = load i11* @knn_set_7_5, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 208 'load' 'knn_set_7_5_load' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 209 [1/1] (0.00ns)   --->   "%trunc_ln4141_9 = trunc i11 %knn_set_7_2_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 209 'trunc' 'trunc_ln4141_9' <Predicate = (!icmp_ln5723 & select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 210 [1/1] (0.00ns)   --->   "%trunc_ln4141_10 = trunc i11 %knn_set_7_5_load to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 210 'trunc' 'trunc_ln4141_10' <Predicate = (!icmp_ln5723 & !select_ln5729_3)> <Delay = 0.00>
+ST_47 : Operation 211 [1/1] (0.96ns)   --->   "%select_ln4141_9 = select i1 %select_ln5729_3, i9 %trunc_ln4141_9, i9 %trunc_ln4141_10" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 211 'select' 'select_ln4141_9' <Predicate = (!icmp_ln5723)> <Delay = 0.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_47 : Operation 212 [1/1] (1.66ns)   --->   "%icmp_ln4141_2 = icmp ugt i9 %select_ln4141_9, %select_ln4141_8" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 212 'icmp' 'icmp_ln4141_2' <Predicate = (!icmp_ln5723)> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 213 [1/1] (0.00ns) (grouped into LUT with out node select_ln4141_12)   --->   "%select_ln4141_11 = select i1 %icmp_ln4141_2, i2 -2, i2 1" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 213 'select' 'select_ln4141_11' <Predicate = (!icmp_ln5723)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_47 : Operation 214 [1/1] (0.00ns) (grouped into LUT with out node select_ln4141_12)   --->   "%or_ln4141 = or i1 %icmp_ln4141_2, %icmp_ln4141_1" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 214 'or' 'or_ln4141' <Predicate = (!icmp_ln5723)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 215 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln4141_12 = select i1 %or_ln4141, i2 %select_ln4141_11, i2 0" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 215 'select' 'select_ln4141_12' <Predicate = (!icmp_ln5723)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 48 <SV = 31> <Delay = 5.43>
+ST_48 : Operation 216 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @TRAINING_LOOP_LANES_s)"   --->   Operation 216 'specloopname' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 217 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 450, i64 450, i64 450)"   --->   Operation 217 'speclooptripcount' 'empty_19' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 218 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str89) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5726]   --->   Operation 218 'specloopname' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 219 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:5727]   --->   Operation 219 'specpipeline' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 220 [1/8] (3.66ns)   --->   "%dist = call fastcc i8 @popcount(i196 %ret_V)" [dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 220 'call' 'dist' <Predicate = (!icmp_ln5723)> <Delay = 3.66> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_48 : Operation 221 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln4149)   --->   "%zext_ln4141 = zext i8 %dist to i9" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 221 'zext' 'zext_ln4141' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 222 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln4149)   --->   "%select_ln4141_10 = select i1 %icmp_ln4141_2, i9 %select_ln4141_9, i9 %select_ln4141_8" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 222 'select' 'select_ln4141_10' <Predicate = (!icmp_ln5723)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_48 : Operation 223 [1/1] (0.00ns)   --->   "%zext_ln4141_2 = zext i2 %select_ln4141_12 to i3" [dg_reg/src/sdsoc/digitrec.cpp:4141->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 223 'zext' 'zext_ln4141_2' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 224 [1/1] (1.66ns) (out node of the LUT)   --->   "%icmp_ln4149 = icmp ult i9 %zext_ln4141, %select_ln4141_10" [dg_reg/src/sdsoc/digitrec.cpp:4149->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 224 'icmp' 'icmp_ln4149' <Predicate = (!icmp_ln5723)> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 225 [1/1] (0.00ns)   --->   "br i1 %icmp_ln4149, label %2, label %LANES_end" [dg_reg/src/sdsoc/digitrec.cpp:4149->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 225 'br' <Predicate = (!icmp_ln5723)> <Delay = 0.00>
+ST_48 : Operation 226 [1/1] (1.65ns)   --->   "%add_ln4150 = add i3 %select_ln5729_2, %zext_ln4141_2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 226 'add' 'add_ln4150' <Predicate = (icmp_ln4149)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 227 [1/1] (1.30ns)   --->   "switch i3 %add_ln4150, label %branch17 [
+    i3 0, label %branch12
+    i3 1, label %branch13
+    i3 2, label %branch14
+    i3 3, label %branch15
+    i3 -4, label %branch16
+  ]" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 227 'switch' <Predicate = (icmp_ln4149)> <Delay = 1.30>
+ST_48 : Operation 228 [1/1] (0.00ns)   --->   "%zext_ln4150_10 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 228 'zext' 'zext_ln4150_10' <Predicate = (icmp_ln4149 & add_ln4150 == 4)> <Delay = 0.00>
+ST_48 : Operation 229 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150_10, i11* @knn_set_7_4, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 229 'store' <Predicate = (icmp_ln4149 & add_ln4150 == 4)> <Delay = 1.76>
+ST_48 : Operation 230 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 230 'br' <Predicate = (icmp_ln4149 & add_ln4150 == 4)> <Delay = 0.00>
+ST_48 : Operation 231 [1/1] (0.00ns)   --->   "%zext_ln4150_9 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 231 'zext' 'zext_ln4150_9' <Predicate = (icmp_ln4149 & add_ln4150 == 3)> <Delay = 0.00>
+ST_48 : Operation 232 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150_9, i11* @knn_set_7_3, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 232 'store' <Predicate = (icmp_ln4149 & add_ln4150 == 3)> <Delay = 1.76>
+ST_48 : Operation 233 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 233 'br' <Predicate = (icmp_ln4149 & add_ln4150 == 3)> <Delay = 0.00>
+ST_48 : Operation 234 [1/1] (0.00ns)   --->   "%zext_ln4150_8 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 234 'zext' 'zext_ln4150_8' <Predicate = (icmp_ln4149 & add_ln4150 == 2)> <Delay = 0.00>
+ST_48 : Operation 235 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150_8, i11* @knn_set_7_2, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 235 'store' <Predicate = (icmp_ln4149 & add_ln4150 == 2)> <Delay = 1.76>
+ST_48 : Operation 236 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 236 'br' <Predicate = (icmp_ln4149 & add_ln4150 == 2)> <Delay = 0.00>
+ST_48 : Operation 237 [1/1] (0.00ns)   --->   "%zext_ln4150_7 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 237 'zext' 'zext_ln4150_7' <Predicate = (icmp_ln4149 & add_ln4150 == 1)> <Delay = 0.00>
+ST_48 : Operation 238 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150_7, i11* @knn_set_7_1, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 238 'store' <Predicate = (icmp_ln4149 & add_ln4150 == 1)> <Delay = 1.76>
+ST_48 : Operation 239 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 239 'br' <Predicate = (icmp_ln4149 & add_ln4150 == 1)> <Delay = 0.00>
+ST_48 : Operation 240 [1/1] (0.00ns)   --->   "%zext_ln4150_6 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 240 'zext' 'zext_ln4150_6' <Predicate = (icmp_ln4149 & add_ln4150 == 0)> <Delay = 0.00>
+ST_48 : Operation 241 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150_6, i11* @knn_set_7_0, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 241 'store' <Predicate = (icmp_ln4149 & add_ln4150 == 0)> <Delay = 1.76>
+ST_48 : Operation 242 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 242 'br' <Predicate = (icmp_ln4149 & add_ln4150 == 0)> <Delay = 0.00>
+ST_48 : Operation 243 [1/1] (0.00ns)   --->   "%zext_ln4150 = zext i8 %dist to i11" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 243 'zext' 'zext_ln4150' <Predicate = (icmp_ln4149 & add_ln4150 != 0 & add_ln4150 != 1 & add_ln4150 != 2 & add_ln4150 != 3 & add_ln4150 != 4)> <Delay = 0.00>
+ST_48 : Operation 244 [1/1] (1.76ns)   --->   "store i11 %zext_ln4150, i11* @knn_set_7_5, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 244 'store' <Predicate = (icmp_ln4149 & add_ln4150 != 0 & add_ln4150 != 1 & add_ln4150 != 2 & add_ln4150 != 3 & add_ln4150 != 4)> <Delay = 1.76>
+ST_48 : Operation 245 [1/1] (0.00ns)   --->   "br label %3" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 245 'br' <Predicate = (icmp_ln4149 & add_ln4150 != 0 & add_ln4150 != 1 & add_ln4150 != 2 & add_ln4150 != 3 & add_ln4150 != 4)> <Delay = 0.00>
+ST_48 : Operation 246 [1/1] (0.00ns)   --->   "br label %LANES_end" [dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729]   --->   Operation 246 'br' <Predicate = (icmp_ln4149)> <Delay = 0.00>
+
+State 49 <SV = 21> <Delay = 1.76>
+ST_49 : Operation 247 [1/1] (1.76ns)   --->   "br label %.preheader95.preheader" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 247 'br' <Predicate = true> <Delay = 1.76>
+
+State 50 <SV = 22> <Delay = 7.19>
+ST_50 : Operation 248 [1/1] (0.00ns)   --->   "%indvar_flatten11 = phi i3 [ %add_ln4454, %INSERTION_SORT_OUTER ], [ 0, %.preheader95.preheader.preheader ]" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 248 'phi' 'indvar_flatten11' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 249 [1/1] (0.00ns)   --->   "%i_0_i = phi i2 [ %select_ln4454, %INSERTION_SORT_OUTER ], [ 0, %.preheader95.preheader.preheader ]" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 249 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 250 [1/1] (0.00ns)   --->   "%tmp_V_74 = phi i32 [ %select_ln4474, %INSERTION_SORT_OUTER ], [ %tmp_V_80, %.preheader95.preheader.preheader ]"   --->   Operation 250 'phi' 'tmp_V_74' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 251 [1/1] (0.00ns)   --->   "%label_list_2_3 = phi i32 [ %select_ln4474_5, %INSERTION_SORT_OUTER ], [ %tmp_V_81, %.preheader95.preheader.preheader ]"   --->   Operation 251 'phi' 'label_list_2_3' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 252 [1/1] (0.00ns)   --->   "%label_list_1_2 = phi i32 [ %select_ln4479_9, %INSERTION_SORT_OUTER ], [ %tmp_V_82, %.preheader95.preheader.preheader ]"   --->   Operation 252 'phi' 'label_list_1_2' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 253 [1/1] (0.00ns)   --->   "%tmp_V_71 = phi i32 [ %min_distance_list_2_9, %INSERTION_SORT_OUTER ], [ %tmp_V_77, %.preheader95.preheader.preheader ]"   --->   Operation 253 'phi' 'tmp_V_71' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 254 [1/1] (0.00ns)   --->   "%min_distance_list_2_6 = phi i32 [ %select_ln4474_6, %INSERTION_SORT_OUTER ], [ %tmp_V_78, %.preheader95.preheader.preheader ]"   --->   Operation 254 'phi' 'min_distance_list_2_6' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 255 [1/1] (0.00ns)   --->   "%min_distance_list_1_3 = phi i32 [ %select_ln4479_10, %INSERTION_SORT_OUTER ], [ %tmp_V_79, %.preheader95.preheader.preheader ]"   --->   Operation 255 'phi' 'min_distance_list_1_3' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 256 [1/1] (0.00ns)   --->   "%j_0_i = phi i2 [ %j, %INSERTION_SORT_OUTER ], [ 0, %.preheader95.preheader.preheader ]"   --->   Operation 256 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 257 [1/1] (0.00ns)   --->   "%zext_ln4463 = zext i2 %i_0_i to i3" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 257 'zext' 'zext_ln4463' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 258 [1/1] (0.00ns)   --->   "%trunc_ln4463 = trunc i2 %i_0_i to i1" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 258 'trunc' 'trunc_ln4463' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 259 [1/1] (0.00ns)   --->   "%shl_ln2 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %trunc_ln4463, i2 0)" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 259 'bitconcatenate' 'shl_ln2' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 260 [1/1] (1.65ns)   --->   "%sub_ln4463 = sub i3 %shl_ln2, %zext_ln4463" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 260 'sub' 'sub_ln4463' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 261 [1/1] (1.13ns)   --->   "%icmp_ln4454 = icmp eq i3 %indvar_flatten11, -2" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 261 'icmp' 'icmp_ln4454' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 262 [1/1] (1.65ns)   --->   "%add_ln4454 = add i3 1, %indvar_flatten11" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 262 'add' 'add_ln4454' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 263 [1/1] (0.00ns)   --->   "br i1 %icmp_ln4454, label %knn_vote_small.exit.0, label %INSERTION_SORT_OUTER" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 263 'br' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 264 [1/1] (0.95ns)   --->   "%icmp_ln4456 = icmp eq i2 %j_0_i, -1" [dg_reg/src/sdsoc/digitrec.cpp:4456->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 264 'icmp' 'icmp_ln4456' <Predicate = (!icmp_ln4454)> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 265 [1/1] (0.99ns)   --->   "%select_ln4463_5 = select i1 %icmp_ln4456, i2 0, i2 %j_0_i" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 265 'select' 'select_ln4463_5' <Predicate = (!icmp_ln4454)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 266 [1/1] (1.56ns)   --->   "%add_ln4454_2 = add i2 1, %i_0_i" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 266 'add' 'add_ln4454_2' <Predicate = (!icmp_ln4454)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 267 [1/1] (0.00ns)   --->   "%zext_ln4463_14 = zext i2 %add_ln4454_2 to i3" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 267 'zext' 'zext_ln4463_14' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 268 [1/1] (0.00ns)   --->   "%trunc_ln4463_3 = trunc i2 %add_ln4454_2 to i1" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 268 'trunc' 'trunc_ln4463_3' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 269 [1/1] (0.00ns)   --->   "%shl_ln4463_mid1 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %trunc_ln4463_3, i2 0)" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 269 'bitconcatenate' 'shl_ln4463_mid1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 270 [1/1] (1.65ns)   --->   "%sub_ln4463_2 = sub i3 %shl_ln4463_mid1, %zext_ln4463_14" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 270 'sub' 'sub_ln4463_2' <Predicate = (!icmp_ln4454)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 271 [1/1] (0.00ns) (grouped into LUT with out node add_ln4463)   --->   "%select_ln4463_6 = select i1 %icmp_ln4456, i3 %sub_ln4463_2, i3 %sub_ln4463" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 271 'select' 'select_ln4463_6' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 272 [1/1] (0.99ns)   --->   "%select_ln4454 = select i1 %icmp_ln4456, i2 %add_ln4454_2, i2 %i_0_i" [dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 272 'select' 'select_ln4454' <Predicate = (!icmp_ln4454)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 273 [1/1] (0.00ns) (grouped into LUT with out node add_ln4463)   --->   "%zext_ln4463_2 = zext i2 %select_ln4463_5 to i3" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 273 'zext' 'zext_ln4463_2' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 274 [1/1] (1.65ns) (out node of the LUT)   --->   "%add_ln4463 = add i3 %select_ln4463_6, %zext_ln4463_2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 274 'add' 'add_ln4463' <Predicate = (!icmp_ln4454)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 275 [1/1] (0.00ns)   --->   "%knn_set_7_0_load_1 = load i11* @knn_set_7_0, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 275 'load' 'knn_set_7_0_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 276 [1/1] (0.00ns)   --->   "%zext_ln4463_8 = zext i11 %knn_set_7_0_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 276 'zext' 'zext_ln4463_8' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 277 [1/1] (0.00ns)   --->   "%knn_set_7_1_load_1 = load i11* @knn_set_7_1, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 277 'load' 'knn_set_7_1_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 278 [1/1] (0.00ns)   --->   "%zext_ln4463_9 = zext i11 %knn_set_7_1_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 278 'zext' 'zext_ln4463_9' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 279 [1/1] (0.00ns)   --->   "%knn_set_7_2_load_1 = load i11* @knn_set_7_2, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 279 'load' 'knn_set_7_2_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 280 [1/1] (0.00ns)   --->   "%zext_ln4463_10 = zext i11 %knn_set_7_2_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 280 'zext' 'zext_ln4463_10' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 281 [1/1] (0.00ns)   --->   "%knn_set_7_3_load_1 = load i11* @knn_set_7_3, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 281 'load' 'knn_set_7_3_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 282 [1/1] (0.00ns)   --->   "%zext_ln4463_11 = zext i11 %knn_set_7_3_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 282 'zext' 'zext_ln4463_11' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 283 [1/1] (0.00ns)   --->   "%knn_set_7_4_load_1 = load i11* @knn_set_7_4, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 283 'load' 'knn_set_7_4_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 284 [1/1] (0.00ns)   --->   "%zext_ln4463_12 = zext i11 %knn_set_7_4_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 284 'zext' 'zext_ln4463_12' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 285 [1/1] (0.00ns)   --->   "%knn_set_7_5_load_1 = load i11* @knn_set_7_5, align 2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 285 'load' 'knn_set_7_5_load_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 286 [1/1] (0.00ns)   --->   "%zext_ln4463_13 = zext i11 %knn_set_7_5_load_1 to i32" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 286 'zext' 'zext_ln4463_13' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_50 : Operation 287 [1/1] (2.32ns)   --->   "%min_distance_list_0 = call i32 @_ssdm_op_Mux.ap_auto.6i32.i3(i32 %zext_ln4463_8, i32 %zext_ln4463_9, i32 %zext_ln4463_10, i32 %zext_ln4463_11, i32 %zext_ln4463_12, i32 %zext_ln4463_13, i3 %add_ln4463)" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 287 'mux' 'min_distance_list_0' <Predicate = (!icmp_ln4454)> <Delay = 2.32> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 2.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 288 [1/1] (1.56ns)   --->   "%j = add i2 1, %select_ln4463_5" [dg_reg/src/sdsoc/digitrec.cpp:4456->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 288 'add' 'j' <Predicate = (!icmp_ln4454)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 23> <Delay = 8.27>
+ST_51 : Operation 289 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([27 x i8]* @LANES_INSERTION_SORT)"   --->   Operation 289 'specloopname' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 290 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6)"   --->   Operation 290 'speclooptripcount' 'empty_20' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 291 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([21 x i8]* @p_str90) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:4457->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 291 'specloopname' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([21 x i8]* @p_str90)" [dg_reg/src/sdsoc/digitrec.cpp:4457->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 292 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 293 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [dg_reg/src/sdsoc/digitrec.cpp:4458->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 293 'specpipeline' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 294 [1/1] (2.47ns)   --->   "%icmp_ln4463 = icmp slt i32 %min_distance_list_0, %min_distance_list_1_3" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 294 'icmp' 'icmp_ln4463' <Predicate = (!icmp_ln4454)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 295 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_3)   --->   "%select_ln4463 = select i1 %icmp_ln4463, i6 0, i6 -24" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 295 'select' 'select_ln4463' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 296 [1/1] (2.47ns)   --->   "%icmp_ln4463_1 = icmp slt i32 %min_distance_list_0, %min_distance_list_2_6" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 296 'icmp' 'icmp_ln4463_1' <Predicate = (!icmp_ln4454)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 297 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_3)   --->   "%not_icmp_ln4463 = xor i1 %icmp_ln4463, true" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 297 'xor' 'not_icmp_ln4463' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 298 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_3)   --->   "%phitmp_i_1_cast_cast = zext i1 %not_icmp_ln4463 to i6" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 298 'zext' 'phitmp_i_1_cast_cast' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 299 [1/1] (1.18ns) (out node of the LUT)   --->   "%select_ln4463_3 = select i1 %icmp_ln4463_1, i6 %phitmp_i_1_cast_cast, i6 %select_ln4463" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 299 'select' 'select_ln4463_3' <Predicate = (!icmp_ln4454)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_4)   --->   "%trunc_ln4463_4 = trunc i6 %select_ln4463_3 to i2" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 300 'trunc' 'trunc_ln4463_4' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 301 [1/1] (2.47ns)   --->   "%icmp_ln4463_4 = icmp slt i32 %min_distance_list_0, %tmp_V_71" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 301 'icmp' 'icmp_ln4463_4' <Predicate = (!icmp_ln4454)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 302 [1/1] (0.00ns)   --->   "%tmp_4 = call i4 @_ssdm_op_PartSelect.i4.i6.i32.i32(i6 %select_ln4463_3, i32 2, i32 5)" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 302 'partselect' 'tmp_4' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 303 [1/1] (1.30ns)   --->   "%icmp_ln4463_5 = icmp ne i4 %tmp_4, 0" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 303 'icmp' 'icmp_ln4463_5' <Predicate = (!icmp_ln4454)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 304 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_4)   --->   "%phitmp_i_2 = select i1 %icmp_ln4463_5, i2 -2, i2 %trunc_ln4463_4" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 304 'select' 'phitmp_i_2' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 305 [1/1] (0.00ns) (grouped into LUT with out node select_ln4463_4)   --->   "%phitmp_i_2_cast_cast = zext i2 %phitmp_i_2 to i6" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 305 'zext' 'phitmp_i_2_cast_cast' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 306 [1/1] (1.18ns) (out node of the LUT)   --->   "%select_ln4463_4 = select i1 %icmp_ln4463_4, i6 %phitmp_i_2_cast_cast, i6 %select_ln4463_3" [dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 306 'select' 'select_ln4463_4' <Predicate = (!icmp_ln4454)> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 307 [1/1] (0.00ns)   --->   "%tmp_5 = call i5 @_ssdm_op_PartSelect.i5.i6.i32.i32(i6 %select_ln4463_4, i32 1, i32 5)" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 307 'partselect' 'tmp_5' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 308 [1/1] (1.36ns)   --->   "%icmp_ln4474 = icmp eq i5 %tmp_5, 0" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 308 'icmp' 'icmp_ln4474' <Predicate = (!icmp_ln4454)> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 309 [1/1] (1.42ns)   --->   "%icmp_ln4479 = icmp eq i6 %select_ln4463_4, 2" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 309 'icmp' 'icmp_ln4479' <Predicate = (!icmp_ln4454)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 310 [1/1] (0.00ns) (grouped into LUT with out node select_ln4474)   --->   "%select_ln4479 = select i1 %icmp_ln4479, i32 3, i32 %tmp_V_74" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 310 'select' 'select_ln4479' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 311 [1/1] (0.00ns) (grouped into LUT with out node min_distance_list_2_9)   --->   "%min_distance_list_2_8 = select i1 %icmp_ln4479, i32 %min_distance_list_0, i32 %tmp_V_71" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 311 'select' 'min_distance_list_2_8' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 312 [1/1] (0.69ns) (out node of the LUT)   --->   "%select_ln4474 = select i1 %icmp_ln4474, i32 %label_list_2_3, i32 %select_ln4479" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 312 'select' 'select_ln4474' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 313 [1/1] (0.69ns) (out node of the LUT)   --->   "%min_distance_list_2_9 = select i1 %icmp_ln4474, i32 %min_distance_list_2_6, i32 %min_distance_list_2_8" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 313 'select' 'min_distance_list_2_9' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 314 [1/1] (1.42ns)   --->   "%icmp_ln4474_1 = icmp eq i6 %select_ln4463_4, 0" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 314 'icmp' 'icmp_ln4474_1' <Predicate = (!icmp_ln4454)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 315 [1/1] (1.42ns)   --->   "%icmp_ln4479_1 = icmp eq i6 %select_ln4463_4, 1" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 315 'icmp' 'icmp_ln4479_1' <Predicate = (!icmp_ln4454)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 316 [1/1] (0.00ns) (grouped into LUT with out node select_ln4474_5)   --->   "%label_list_2_4 = select i1 %icmp_ln4479_1, i32 3, i32 %label_list_2_3" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 316 'select' 'label_list_2_4' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 317 [1/1] (0.00ns) (grouped into LUT with out node select_ln4474_6)   --->   "%min_distance_list_2_10 = select i1 %icmp_ln4479_1, i32 %min_distance_list_0, i32 %min_distance_list_2_6" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 317 'select' 'min_distance_list_2_10' <Predicate = (!icmp_ln4454)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 318 [1/1] (0.69ns) (out node of the LUT)   --->   "%select_ln4474_5 = select i1 %icmp_ln4474_1, i32 %label_list_1_2, i32 %label_list_2_4" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 318 'select' 'select_ln4474_5' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 319 [1/1] (0.69ns) (out node of the LUT)   --->   "%select_ln4474_6 = select i1 %icmp_ln4474_1, i32 %min_distance_list_1_3, i32 %min_distance_list_2_10" [dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 319 'select' 'select_ln4474_6' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 320 [1/1] (0.69ns)   --->   "%select_ln4479_9 = select i1 %icmp_ln4474_1, i32 3, i32 %label_list_1_2" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 320 'select' 'select_ln4479_9' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 321 [1/1] (0.69ns)   --->   "%select_ln4479_10 = select i1 %icmp_ln4474_1, i32 %min_distance_list_0, i32 %min_distance_list_1_3" [dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 321 'select' 'select_ln4479_10' <Predicate = (!icmp_ln4454)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_51 : Operation 322 [1/1] (0.00ns)   --->   "%empty_21 = call i32 (...)* @_ssdm_op_SpecRegionEnd([21 x i8]* @p_str90, i32 %tmp_1)" [dg_reg/src/sdsoc/digitrec.cpp:4499->dg_reg/src/sdsoc/digitrec.cpp:5743]   --->   Operation 322 'specregionend' 'empty_21' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+ST_51 : Operation 323 [1/1] (0.00ns)   --->   "br label %.preheader95.preheader"   --->   Operation 323 'br' <Predicate = (!icmp_ln4454)> <Delay = 0.00>
+
+State 52 <SV = 23> <Delay = 3.63>
+ST_52 : Operation 324 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 undef)" [dg_reg/src/sdsoc/digitrec.cpp:5755]   --->   Operation 324 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 53 <SV = 24> <Delay = 3.63>
+ST_53 : Operation 325 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_71)" [dg_reg/src/sdsoc/digitrec.cpp:5756]   --->   Operation 325 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 54 <SV = 25> <Delay = 3.63>
+ST_54 : Operation 326 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %min_distance_list_2_6)" [dg_reg/src/sdsoc/digitrec.cpp:5757]   --->   Operation 326 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 55 <SV = 26> <Delay = 3.63>
+ST_55 : Operation 327 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %min_distance_list_1_3)" [dg_reg/src/sdsoc/digitrec.cpp:5758]   --->   Operation 327 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 56 <SV = 27> <Delay = 3.63>
+ST_56 : Operation 328 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 undef)" [dg_reg/src/sdsoc/digitrec.cpp:5759]   --->   Operation 328 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 57 <SV = 28> <Delay = 3.63>
+ST_57 : Operation 329 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %tmp_V_74)" [dg_reg/src/sdsoc/digitrec.cpp:5760]   --->   Operation 329 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 58 <SV = 29> <Delay = 3.63>
+ST_58 : Operation 330 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %label_list_2_3)" [dg_reg/src/sdsoc/digitrec.cpp:5761]   --->   Operation 330 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+
+State 59 <SV = 30> <Delay = 3.63>
+ST_59 : Operation 331 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %Output_1_V_V, i32 %label_list_1_2)" [dg_reg/src/sdsoc/digitrec.cpp:5762]   --->   Operation 331 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_59 : Operation 332 [1/1] (0.00ns)   --->   "ret void" [dg_reg/src/sdsoc/digitrec.cpp:5763]   --->   Operation 332 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', dg_reg/src/sdsoc/digitrec.cpp:5639) [21]  (1.77 ns)
+
+ <State 2>: 1.82ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dg_reg/src/sdsoc/digitrec.cpp:5639) [21]  (0 ns)
+	'add' operation ('i', dg_reg/src/sdsoc/digitrec.cpp:5639) [24]  (1.82 ns)
+
+ <State 3>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5642) [31]  (3.63 ns)
+
+ <State 4>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5643) [33]  (3.63 ns)
+
+ <State 5>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5644) [34]  (3.63 ns)
+
+ <State 6>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5645) [35]  (3.63 ns)
+
+ <State 7>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5646) [36]  (3.63 ns)
+
+ <State 8>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5647) [37]  (3.63 ns)
+
+ <State 9>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5648) [38]  (3.63 ns)
+
+ <State 10>: 6.89ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5649) [39]  (3.63 ns)
+	'store' operation ('store_ln5649', dg_reg/src/sdsoc/digitrec.cpp:5649) of variable '__Result__', dg_reg/src/sdsoc/digitrec.cpp:5649 on array 'training_set_V_5' [41]  (3.25 ns)
+
+ <State 11>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', dg_reg/src/sdsoc/digitrec.cpp:5653) [47]  (1.77 ns)
+
+ <State 12>: 2.1ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dg_reg/src/sdsoc/digitrec.cpp:5653) [47]  (0 ns)
+	'icmp' operation ('icmp_ln5653', dg_reg/src/sdsoc/digitrec.cpp:5653) [48]  (2.1 ns)
+
+ <State 13>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5656) [56]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5664) [64]  (3.63 ns)
+
+ <State 14>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5657) [57]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5665) [65]  (3.63 ns)
+
+ <State 15>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5658) [58]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5666) [66]  (3.63 ns)
+
+ <State 16>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5659) [59]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5667) [67]  (3.63 ns)
+
+ <State 17>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5660) [60]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5668) [68]  (3.63 ns)
+
+ <State 18>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5661) [61]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5669) [69]  (3.63 ns)
+
+ <State 19>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5662) [62]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5670) [70]  (3.63 ns)
+
+ <State 20>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5663) [63]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5671) [71]  (3.63 ns)
+
+ <State 21>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5678) [78]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5686) [87]  (3.63 ns)
+
+ <State 22>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5679) [79]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5687) [88]  (3.63 ns)
+
+ <State 23>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5680) [80]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5688) [89]  (3.63 ns)
+
+ <State 24>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5681) [81]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5689) [90]  (3.63 ns)
+
+ <State 25>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5682) [82]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5690) [91]  (3.63 ns)
+
+ <State 26>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5683) [83]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5691) [92]  (3.63 ns)
+
+ <State 27>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5684) [84]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5692) [93]  (3.63 ns)
+
+ <State 28>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5685) [85]  (3.63 ns)
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5693) [94]  (3.63 ns)
+
+ <State 29>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5699) [95]  (3.63 ns)
+
+ <State 30>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5700) [96]  (3.63 ns)
+
+ <State 31>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5701) [97]  (3.63 ns)
+
+ <State 32>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5702) [98]  (3.63 ns)
+
+ <State 33>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5703) [99]  (3.63 ns)
+
+ <State 34>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5704) [100]  (3.63 ns)
+
+ <State 35>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5705) [101]  (3.63 ns)
+
+ <State 36>: 3.63ns
+The critical path consists of the following:
+	fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5706) [102]  (3.63 ns)
+
+ <State 37>: 8.15ns
+The critical path consists of the following:
+	'phi' operation ('j_0', dg_reg/src/sdsoc/digitrec.cpp:5729) with incoming values : ('select_ln5729_1', dg_reg/src/sdsoc/digitrec.cpp:5729) [113]  (0 ns)
+	'add' operation ('add_ln5723_1', dg_reg/src/sdsoc/digitrec.cpp:5723) [128]  (1.56 ns)
+	'select' operation ('select_ln5729_1', dg_reg/src/sdsoc/digitrec.cpp:5729) [130]  (0.993 ns)
+	'mul' operation ('mul_ln5729', dg_reg/src/sdsoc/digitrec.cpp:5729) [132]  (5.59 ns)
+
+ <State 38>: 6.38ns
+The critical path consists of the following:
+	'mul' operation of DSP[134] ('mul_ln5729_1', dg_reg/src/sdsoc/digitrec.cpp:5729) [134]  (6.38 ns)
+
+ <State 39>: 5.08ns
+The critical path consists of the following:
+	'add' operation ('add_ln5728', dg_reg/src/sdsoc/digitrec.cpp:5728) [146]  (1.82 ns)
+	'getelementptr' operation ('training_set_V_5_add_1', dg_reg/src/sdsoc/digitrec.cpp:5728) [148]  (0 ns)
+	'load' operation ('training_instance.V', dg_reg/src/sdsoc/digitrec.cpp:5728) on array 'training_set_V_5' [149]  (3.25 ns)
+
+ <State 40>: 4.29ns
+The critical path consists of the following:
+	'load' operation ('training_instance.V', dg_reg/src/sdsoc/digitrec.cpp:5728) on array 'training_set_V_5' [149]  (3.25 ns)
+	'xor' operation ('ret.V', dg_reg/src/sdsoc/digitrec.cpp:4128->dg_reg/src/sdsoc/digitrec.cpp:5729) [151]  (1.04 ns)
+
+ <State 41>: 7.02ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (7.02 ns)
+
+ <State 42>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 43>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 44>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 45>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 46>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 47>: 8.68ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (8.68 ns)
+
+ <State 48>: 5.44ns
+The critical path consists of the following:
+	'call' operation ('dist', dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5729) to 'popcount' [152]  (3.67 ns)
+	'store' operation ('store_ln4150', dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729) of variable 'zext_ln4150_6', dg_reg/src/sdsoc/digitrec.cpp:4150->dg_reg/src/sdsoc/digitrec.cpp:5729 on static variable 'knn_set_7_0' [200]  (1.77 ns)
+
+ <State 49>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten11', dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743) with incoming values : ('add_ln4454', dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743) [215]  (1.77 ns)
+
+ <State 50>: 7.19ns
+The critical path consists of the following:
+	'phi' operation ('i_0_i', dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743) with incoming values : ('select_ln4454', dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743) [216]  (0 ns)
+	'add' operation ('add_ln4454_2', dg_reg/src/sdsoc/digitrec.cpp:4454->dg_reg/src/sdsoc/digitrec.cpp:5743) [236]  (1.56 ns)
+	'sub' operation ('sub_ln4463_2', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [240]  (1.65 ns)
+	'select' operation ('select_ln4463_6', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [241]  (0 ns)
+	'add' operation ('add_ln4463', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [247]  (1.65 ns)
+	'mux' operation ('min_distance_list[0]', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [260]  (2.33 ns)
+
+ <State 51>: 8.28ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln4463', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [261]  (2.47 ns)
+	'xor' operation ('not_icmp_ln4463', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [264]  (0 ns)
+	'select' operation ('select_ln4463_3', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [266]  (1.19 ns)
+	'icmp' operation ('icmp_ln4463_5', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [270]  (1.3 ns)
+	'select' operation ('phitmp_i_2', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [271]  (0 ns)
+	'select' operation ('select_ln4463_4', dg_reg/src/sdsoc/digitrec.cpp:4463->dg_reg/src/sdsoc/digitrec.cpp:5743) [273]  (1.19 ns)
+	'icmp' operation ('icmp_ln4479', dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743) [276]  (1.43 ns)
+	'select' operation ('select_ln4479', dg_reg/src/sdsoc/digitrec.cpp:4479->dg_reg/src/sdsoc/digitrec.cpp:5743) [277]  (0 ns)
+	'select' operation ('select_ln4474', dg_reg/src/sdsoc/digitrec.cpp:4474->dg_reg/src/sdsoc/digitrec.cpp:5743) [279]  (0.698 ns)
+
+ <State 52>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5755) [293]  (3.63 ns)
+
+ <State 53>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5756) [294]  (3.63 ns)
+
+ <State 54>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5757) [295]  (3.63 ns)
+
+ <State 55>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5758) [296]  (3.63 ns)
+
+ <State 56>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5759) [297]  (3.63 ns)
+
+ <State 57>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5760) [298]  (3.63 ns)
+
+ <State 58>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5761) [299]  (3.63 ns)
+
+ <State 59>: 3.63ns
+The critical path consists of the following:
+	fifo write on port 'Output_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5762) [300]  (3.63 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

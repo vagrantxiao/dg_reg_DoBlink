@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="knn_cluster3" xd:componentRef="knn_cluster3" xd:initiationInterval="115739" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="Input_1" xd:originalName="Input_1" xd:direction="in" xd:interfaceRef="Input_1_V_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="32"/>
+  <xd:arg xd:name="Output_1" xd:originalName="Output_1" xd:direction="out" xd:interfaceRef="Output_1_V_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="32" xd:firstOut="4"/>
+  <xd:latencyEstimates xd:best-case="94134" xd:worst-case="115738" xd:average-case="104936"/>
+  <xd:resourceEstimates xd:LUT="22662" xd:FF="14202" xd:BRAM="48" xd:DSP="5"/>
+</xd:acceleratorMap>

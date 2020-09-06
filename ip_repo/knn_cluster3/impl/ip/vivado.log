@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Sep  6 16:11:58 2020
+# Process ID: 12531
+# Current directory: /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster3/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster3/impl/ip/vivado.log
+# Journal file: /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster3/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/ylxiao/Xilinx/Vivado/2019.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  6 16:12:06 2020...

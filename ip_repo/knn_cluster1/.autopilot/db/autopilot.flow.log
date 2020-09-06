@@ -1,0 +1,1531 @@
+INFO-FLOW: Workspace /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1 opened at Sun Sep 06 16:14:27 EDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.19 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.3 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 1.44 sec.
+Execute   set_part xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     get_default_platform 
+Command   set_part done; 0.12 sec.
+Execute   create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'dg_reg/src/sdsoc/digitrec.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling dg_reg/src/sdsoc/digitrec.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       is_encrypted dg_reg/src/sdsoc/digitrec.cpp 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "dg_reg/src/sdsoc/digitrec.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp" 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E dg_reg/src/sdsoc/digitrec.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp
+Command       clang done; 1.42 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.88 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp"  -o "/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/useless.bc
+Command       clang done; 1.9 sec.
+INFO-FLOW: Done: GCC PP time: 4.2 seconds per iteration
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp std=gnu++98 -directive=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.77 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp std=gnu++98 -directive=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/all.directive.json -quiet -fix-errors /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.76 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/xilinx-dataflow-lawyer.digitrec.pp.0.cpp.diag.yml /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/xilinx-dataflow-lawyer.digitrec.pp.0.cpp.out.log 2> /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/xilinx-dataflow-lawyer.digitrec.pp.0.cpp.err.log 
+Command       ap_eval done; 0.89 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/tidy-3.1.digitrec.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/tidy-3.1.digitrec.pp.0.cpp.out.log 2> /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/tidy-3.1.digitrec.pp.0.cpp.err.log 
+Command         ap_eval done; 1.43 sec.
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute         ap_eval exec -ignorestderr /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/xilinx-legacy-rewriter.digitrec.pp.0.cpp.out.log 2> /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/xilinx-legacy-rewriter.digitrec.pp.0.cpp.err.log 
+Command         ap_eval done; 0.68 sec.
+Command       tidy_31 done; 2.14 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 3.8 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.8 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.bc" 
+INFO-FLOW: exec /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/ylxiao/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot -I /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.bc
+Command       clang done; 1.96 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/digitrec.g.bc -hls-opt -except-internalize knn_cluster1 -L/home/ylxiao/Xilinx/Vivado/2019.2/lnx64/lib -lhlsm -lhlsmc++ -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g 
+Command       llvm-ld done; 0.75 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21312 ; free virtual = 27677
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21312 ; free virtual = 27677
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.pp.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.pp.0.bc -disable-opt -L/home/ylxiao/Xilinx/Vivado/2019.2/lnx64/lib -lfloatconversion -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.69 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top knn_cluster1 -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.0.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn5' (dg_reg/src/sdsoc/digitrec.cpp:5270).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn4' (dg_reg/src/sdsoc/digitrec.cpp:5117).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn3' (dg_reg/src/sdsoc/digitrec.cpp:4965).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn2' (dg_reg/src/sdsoc/digitrec.cpp:4812).
+INFO: [XFORM 203-603] Inlining function 'update_knn' into 'update_knn1' (dg_reg/src/sdsoc/digitrec.cpp:4659).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn5' (dg_reg/src/sdsoc/digitrec.cpp:5284).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn4' (dg_reg/src/sdsoc/digitrec.cpp:5131).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn3' (dg_reg/src/sdsoc/digitrec.cpp:4979).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn2' (dg_reg/src/sdsoc/digitrec.cpp:4826).
+INFO: [XFORM 203-603] Inlining function 'knn_vote_small' into 'update_knn1' (dg_reg/src/sdsoc/digitrec.cpp:4673).
+Command         transform done; 0.48 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21285 ; free virtual = 27662
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.1.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn1' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:4659) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn2' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:4812) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn3' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:4965) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn4' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5117) automatically.
+INFO: [XFORM 203-602] Inlining function 'popcount' into 'update_knn5' (dg_reg/src/sdsoc/digitrec.cpp:4132->dg_reg/src/sdsoc/digitrec.cpp:5270) automatically.
+Command         transform done; 0.64 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.2.prechk.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] dg_reg/src/sdsoc/digitrec.cpp:5252: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21285 ; free virtual = 27661
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.g.1.bc to /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.1.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:5267) in function 'update_knn5' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn5' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:5114) in function 'update_knn4' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn4' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4962) in function 'update_knn3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4809) in function 'update_knn2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4656) in function 'update_knn1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'INSERTION_SORT_OUTER' (dg_reg/src/sdsoc/digitrec.cpp:4457) in function 'update_knn1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'popcount' (dg_reg/src/sdsoc/digitrec.cpp:19:28).
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:5249) in function 'update_knn5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:5258) in function 'update_knn5' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:5288) in function 'update_knn5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:5096) in function 'update_knn4' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:5105) in function 'update_knn4' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn4' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn4' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn4' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:5135) in function 'update_knn4' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:4944) in function 'update_knn3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:4953) in function 'update_knn3' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:4983) in function 'update_knn3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:4791) in function 'update_knn2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:4800) in function 'update_knn2' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:4830) in function 'update_knn2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (dg_reg/src/sdsoc/digitrec.cpp:4638) in function 'update_knn1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'SET_KNN_SET' (dg_reg/src/sdsoc/digitrec.cpp:4647) in function 'update_knn1' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'FIND_MAX_DIST' (dg_reg/src/sdsoc/digitrec.cpp:4140) in function 'update_knn1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERTION_SORT_INNER' (dg_reg/src/sdsoc/digitrec.cpp:4461) in function 'update_knn1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'INSERT' (dg_reg/src/sdsoc/digitrec.cpp:4472) in function 'update_knn1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-7' (dg_reg/src/sdsoc/digitrec.cpp:4677) in function 'update_knn1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (dg_reg/src/sdsoc/digitrec.cpp:19) in function 'popcount' completely with a factor of 196.
+INFO: [XFORM 203-101] Partitioning array 'knn_set'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:5236) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:5237) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.7'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:5084) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:5085) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.6'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:4931) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:4932) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.5'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:4778) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:4779) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'knn_set.4'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'min_distance_list' (dg_reg/src/sdsoc/digitrec.cpp:4630) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'label_list' (dg_reg/src/sdsoc/digitrec.cpp:4633) in dimension 1 completely.
+INFO: [XFORM 203-712] Applying dataflow to function 'knn_cluster1', detected/extracted 5 process function(s): 
+	 'update_knn1'
+	 'update_knn2'
+	 'update_knn3'
+	 'update_knn4'
+	 'update_knn5'.
+Command         transform done; 3.1 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.1.tmp.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn5'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn4'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn3'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn2'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dg_reg/src/sdsoc/digitrec.cpp:4457:6) to (dg_reg/src/sdsoc/digitrec.cpp:4456:50) in function 'update_knn1'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'popcount' (dg_reg/src/sdsoc/digitrec.cpp:22:14)...193 expression(s) balanced.
+Command         transform done; 1.57 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21261 ; free virtual = 27633
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.2.bc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:5265:5) in function 'update_knn5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:5112:5) in function 'update_knn4'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn4'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:4960:5) in function 'update_knn3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:4807:5) in function 'update_knn2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TRAINING_LOOP' (dg_reg/src/sdsoc/digitrec.cpp:4654:5) in function 'update_knn1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LANES' (dg_reg/src/sdsoc/digitrec.cpp:4455:4) in function 'update_knn1'.
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.4' (dg_reg/src/sdsoc/digitrec.cpp:5190:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.3' (dg_reg/src/sdsoc/digitrec.cpp:5038:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.2' (dg_reg/src/sdsoc/digitrec.cpp:4885:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V.1' (dg_reg/src/sdsoc/digitrec.cpp:4732:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'training_set.V' (dg_reg/src/sdsoc/digitrec.cpp:4581:33)
+Command         transform done; 2.61 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 955.809 ; gain = 523.035 ; free physical = 21207 ; free virtual = 27580
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 9.15 sec.
+Command     elaborate done; 22.95 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'knn_cluster1' ...
+Execute       ap_set_top_model knn_cluster1 
+Execute       get_model_list knn_cluster1 -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model knn_cluster1 
+Execute       preproc_iomode -model update_knn5 
+Execute       preproc_iomode -model update_knn4 
+Execute       preproc_iomode -model update_knn3 
+Execute       preproc_iomode -model update_knn2 
+Execute       preproc_iomode -model update_knn1 
+Execute       preproc_iomode -model popcount 
+Execute       get_model_list knn_cluster1 -filter all-wo-channel 
+INFO-FLOW: Model list for configure: popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO-FLOW: Configuring Module : popcount ...
+Execute       set_default_model popcount 
+Execute       apply_spec_resource_limit popcount 
+INFO-FLOW: Configuring Module : update_knn1 ...
+Execute       set_default_model update_knn1 
+Execute       apply_spec_resource_limit update_knn1 
+INFO-FLOW: Configuring Module : update_knn2 ...
+Execute       set_default_model update_knn2 
+Execute       apply_spec_resource_limit update_knn2 
+INFO-FLOW: Configuring Module : update_knn3 ...
+Execute       set_default_model update_knn3 
+Execute       apply_spec_resource_limit update_knn3 
+INFO-FLOW: Configuring Module : update_knn4 ...
+Execute       set_default_model update_knn4 
+Execute       apply_spec_resource_limit update_knn4 
+INFO-FLOW: Configuring Module : update_knn5 ...
+Execute       set_default_model update_knn5 
+Execute       apply_spec_resource_limit update_knn5 
+INFO-FLOW: Configuring Module : knn_cluster1 ...
+Execute       set_default_model knn_cluster1 
+Execute       apply_spec_resource_limit knn_cluster1 
+INFO-FLOW: Model list for preprocess: popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO-FLOW: Preprocessing Module: popcount ...
+Execute       set_default_model popcount 
+Execute       cdfg_preprocess -model popcount 
+Execute       rtl_gen_preprocess popcount 
+INFO-FLOW: Preprocessing Module: update_knn1 ...
+Execute       set_default_model update_knn1 
+Execute       cdfg_preprocess -model update_knn1 
+Execute       rtl_gen_preprocess update_knn1 
+INFO-FLOW: Preprocessing Module: update_knn2 ...
+Execute       set_default_model update_knn2 
+Execute       cdfg_preprocess -model update_knn2 
+Execute       rtl_gen_preprocess update_knn2 
+INFO-FLOW: Preprocessing Module: update_knn3 ...
+Execute       set_default_model update_knn3 
+Execute       cdfg_preprocess -model update_knn3 
+Execute       rtl_gen_preprocess update_knn3 
+INFO-FLOW: Preprocessing Module: update_knn4 ...
+Execute       set_default_model update_knn4 
+Execute       cdfg_preprocess -model update_knn4 
+Execute       rtl_gen_preprocess update_knn4 
+INFO-FLOW: Preprocessing Module: update_knn5 ...
+Execute       set_default_model update_knn5 
+Execute       cdfg_preprocess -model update_knn5 
+Execute       rtl_gen_preprocess update_knn5 
+INFO-FLOW: Preprocessing Module: knn_cluster1 ...
+Execute       set_default_model knn_cluster1 
+Execute       cdfg_preprocess -model knn_cluster1 
+Execute       rtl_gen_preprocess knn_cluster1 
+INFO-FLOW: Model list for synthesis: popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model popcount 
+Execute       schedule -model popcount 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'popcount'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.17 sec.
+INFO: [HLS 200-111]  Elapsed time: 24.89 seconds; current allocated memory: 208.505 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.verbose.sched.rpt 
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.sched.adb -f 
+INFO-FLOW: Finish scheduling popcount.
+Execute       set_default_model popcount 
+Execute       bind -model popcount 
+BIND OPTION: model=popcount
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 210.747 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.verbose.bind.rpt 
+Command       syn_report done; 0.23 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.bind.adb -f 
+INFO-FLOW: Finish binding popcount.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn1 
+Execute       schedule -model update_knn1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4575) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4574).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4576) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4574).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4577) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4574).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4578) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4574).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4581) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4574).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4589) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4588).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4590) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4588).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4591) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4588).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4592) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4588).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn1' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4595) and wire read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4588).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.43 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.73 seconds; current allocated memory: 211.996 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.verbose.sched.rpt 
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.sched.adb -f 
+INFO-FLOW: Finish scheduling update_knn1.
+Execute       set_default_model update_knn1 
+Execute       bind -model update_knn1 
+BIND OPTION: model=update_knn1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 213.121 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.verbose.bind.rpt 
+Command       syn_report done; 0.25 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.bind.adb -f 
+INFO-FLOW: Finish binding update_knn1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn2 
+Execute       schedule -model update_knn2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4726) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4727) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4728) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4729) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4725).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4732) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4725).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4740) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4739).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4741) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4739).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4742) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4739).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4743) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4739).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn2' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4746) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4739).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.75 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.03 seconds; current allocated memory: 214.164 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.verbose.sched.rpt 
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.sched.adb -f 
+INFO-FLOW: Finish scheduling update_knn2.
+Execute       set_default_model update_knn2 
+Execute       bind -model update_knn2 
+BIND OPTION: model=update_knn2
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 215.317 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.verbose.bind.rpt 
+Command       syn_report done; 0.26 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.bind.adb -f 
+INFO-FLOW: Finish binding update_knn2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn3 
+Execute       schedule -model update_knn3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4879) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4878).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4880) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4878).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4881) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4878).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4882) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4878).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4885) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4878).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4893) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4892).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4894) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4892).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4895) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4892).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4896) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4892).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn3' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4899) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:4892).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.76 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 216.370 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.verbose.sched.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.sched.adb -f 
+INFO-FLOW: Finish scheduling update_knn3.
+Execute       set_default_model update_knn3 
+Execute       bind -model update_knn3 
+BIND OPTION: model=update_knn3
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 217.509 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.verbose.bind.rpt 
+Command       syn_report done; 0.26 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.bind.adb -f 
+INFO-FLOW: Finish binding update_knn3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn4 
+Execute       schedule -model update_knn4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5032) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5031).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5033) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5031).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5034) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5031).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5035) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5031).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5038) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5031).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5046) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5045).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5047) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5045).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5048) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5045).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5049) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5045).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn4' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5052) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5045).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.79 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.08 seconds; current allocated memory: 218.546 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.verbose.sched.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.sched.adb -f 
+INFO-FLOW: Finish scheduling update_knn4.
+Execute       set_default_model update_knn4 
+Execute       bind -model update_knn4 
+BIND OPTION: model=update_knn4
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 219.683 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.verbose.bind.rpt 
+Command       syn_report done; 0.26 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.bind.adb -f 
+INFO-FLOW: Finish binding update_knn4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model update_knn5 
+Execute       schedule -model update_knn5 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STORE_LOCAL'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5184) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5183).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5185) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5183).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5186) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5183).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5187) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5183).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: STORE_LOCAL): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5190) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5183).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-61] Pipelining loop 'TRANSFER_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5198) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5197).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5199) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5197).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5200) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5197).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5201) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5197).
+WARNING: [SCHED 204-68] The II Violation in module 'update_knn5' (Loop: TRANSFER_LOOP): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5204) and fifo read on port 'Input_1_V_V' (dg_reg/src/sdsoc/digitrec.cpp:5197).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'TRAINING_LOOP_LANES'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'LANES_INSERTION_SORT_OUTER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.51 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.8 seconds; current allocated memory: 220.738 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.verbose.sched.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.sched.adb -f 
+INFO-FLOW: Finish scheduling update_knn5.
+Execute       set_default_model update_knn5 
+Execute       bind -model update_knn5 
+BIND OPTION: model=update_knn5
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 221.925 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.verbose.bind.rpt 
+Command       syn_report done; 0.26 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.bind.adb -f 
+INFO-FLOW: Finish binding update_knn5.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'knn_cluster1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model knn_cluster1 
+Execute       schedule -model knn_cluster1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 222.307 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.verbose.sched.rpt 
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.sched.adb -f 
+INFO-FLOW: Finish scheduling knn_cluster1.
+Execute       set_default_model knn_cluster1 
+Execute       bind -model knn_cluster1 
+BIND OPTION: model=knn_cluster1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.51 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.52 seconds; current allocated memory: 224.118 MB.
+Execute       syn_report -verbosereport -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.verbose.bind.rpt 
+Command       syn_report done; 0.99 sec.
+Execute       db_write -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.bind.adb -f 
+INFO-FLOW: Finish binding knn_cluster1.
+Execute       get_model_list knn_cluster1 -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess popcount 
+Execute       rtl_gen_preprocess update_knn1 
+Execute       rtl_gen_preprocess update_knn2 
+Execute       rtl_gen_preprocess update_knn3 
+Execute       rtl_gen_preprocess update_knn4 
+Execute       rtl_gen_preprocess update_knn5 
+Execute       rtl_gen_preprocess knn_cluster1 
+INFO-FLOW: Model list for RTL generation: popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'popcount' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model popcount -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'popcount'.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 229.215 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl popcount -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/popcount -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl popcount -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/popcount 
+Execute       gen_rtl popcount -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/popcount 
+Execute       syn_report -csynth -model popcount -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/popcount_csynth.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       syn_report -rtlxml -model popcount -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/popcount_csynth.xml 
+Execute       syn_report -verbosereport -model popcount -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.verbose.rpt 
+Command       syn_report done; 0.28 sec.
+Execute       db_write -model popcount -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.adb 
+Command       db_write done; 0.24 sec.
+Execute       gen_tb_info popcount -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model update_knn1 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'index_4' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn1_training_set_V' to 'update_knn1_trainbkb' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_4_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4_5' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'knn_cluster1_mux_63_32_1_1' to 'knn_cluster1_mux_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'knn_cluster1_mul_mul_17ns_15ns_32_1_1' to 'knn_cluster1_mul_dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn1'.
+INFO: [HLS 200-111]  Elapsed time: 0.88 seconds; current allocated memory: 241.312 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl update_knn1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/update_knn1 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl update_knn1 -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/update_knn1 
+Execute       gen_rtl update_knn1 -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/update_knn1 
+Execute       syn_report -csynth -model update_knn1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn1_csynth.rpt 
+Execute       syn_report -rtlxml -model update_knn1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn1_csynth.xml 
+Execute       syn_report -verbosereport -model update_knn1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.verbose.rpt 
+Command       syn_report done; 0.3 sec.
+Execute       db_write -model update_knn1 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.adb 
+Command       db_write done; 0.17 sec.
+Execute       gen_tb_info update_knn1 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model update_knn2 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'index_3' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn2_training_set_V_7' to 'update_knn2_traineOg' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_5_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_5_5' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn2'.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 247.816 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl update_knn2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/update_knn2 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl update_knn2 -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/update_knn2 
+Execute       gen_rtl update_knn2 -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/update_knn2 
+Execute       syn_report -csynth -model update_knn2 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn2_csynth.rpt 
+Execute       syn_report -rtlxml -model update_knn2 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn2_csynth.xml 
+Execute       syn_report -verbosereport -model update_knn2 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.verbose.rpt 
+Command       syn_report done; 0.31 sec.
+Execute       db_write -model update_knn2 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.adb 
+Command       db_write done; 0.18 sec.
+Execute       gen_tb_info update_knn2 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model update_knn3 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'index_2' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn3_training_set_V_6' to 'update_knn3_trainfYi' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_6_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_6_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_6_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_6_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_6_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_6_5' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn3'.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 254.432 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl update_knn3 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/update_knn3 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl update_knn3 -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/update_knn3 
+Execute       gen_rtl update_knn3 -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/update_knn3 
+Execute       syn_report -csynth -model update_knn3 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn3_csynth.rpt 
+Execute       syn_report -rtlxml -model update_knn3 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn3_csynth.xml 
+Execute       syn_report -verbosereport -model update_knn3 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.verbose.rpt 
+Command       syn_report done; 0.29 sec.
+Execute       db_write -model update_knn3 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.adb 
+Command       db_write done; 0.2 sec.
+Execute       gen_tb_info update_knn3 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model update_knn4 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'index_1' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn4_training_set_V_5' to 'update_knn4_traing8j' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_7_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_7_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_7_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_7_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_7_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_7_5' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn4'.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 261.047 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl update_knn4 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/update_knn4 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl update_knn4 -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/update_knn4 
+Execute       gen_rtl update_knn4 -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/update_knn4 
+Execute       syn_report -csynth -model update_knn4 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn4_csynth.rpt 
+Execute       syn_report -rtlxml -model update_knn4 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn4_csynth.xml 
+Execute       syn_report -verbosereport -model update_knn4 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.verbose.rpt 
+Command       syn_report done; 0.29 sec.
+Execute       db_write -model update_knn4 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.adb 
+Command       db_write done; 0.21 sec.
+Execute       gen_tb_info update_knn4 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model update_knn5 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'index' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'update_knn5_training_set_V_4' to 'update_knn5_trainhbi' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'knn_set_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'knn_set' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mul_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'knn_cluster1_mux_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn5'.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 267.808 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl update_knn5 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/update_knn5 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl update_knn5 -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/update_knn5 
+Execute       gen_rtl update_knn5 -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/update_knn5 
+Execute       syn_report -csynth -model update_knn5 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn5_csynth.rpt 
+Execute       syn_report -rtlxml -model update_knn5 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/update_knn5_csynth.xml 
+Execute       syn_report -verbosereport -model update_knn5 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.verbose.rpt 
+Command       syn_report done; 0.3 sec.
+Execute       db_write -model update_knn5 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.adb 
+Command       db_write done; 0.22 sec.
+Execute       gen_tb_info update_knn5 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'knn_cluster1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model knn_cluster1 -vendor xilinx -mg_file /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'knn_cluster1/Input_1_V_V' to 'ap_hs'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'knn_cluster1/Output_1_V_V' to 'ap_hs'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'knn_cluster1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'start_for_update_knn2_U0' to 'start_for_update_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_update_knn3_U0' to 'start_for_update_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_update_knn4_U0' to 'start_for_update_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_update_knn5_U0' to 'start_for_update_lbW' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'knn_cluster1'.
+INFO: [HLS 200-111]  Elapsed time: 0.7 seconds; current allocated memory: 272.657 MB.
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl knn_cluster1 -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/systemc/knn_cluster1 -synmodules popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1 
+Execute       gen_rtl knn_cluster1 -istop -style xilinx -f -lang vhdl -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/vhdl/knn_cluster1 
+Execute       gen_rtl knn_cluster1 -istop -style xilinx -f -lang vlog -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/verilog/knn_cluster1 
+Execute       syn_report -csynth -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/knn_cluster1_csynth.rpt 
+Execute       syn_report -rtlxml -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/syn/report/knn_cluster1_csynth.xml 
+Execute       syn_report -verbosereport -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.verbose.rpt 
+Command       syn_report done; 1 sec.
+Execute       db_write -model knn_cluster1 -f -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.adb 
+Command       db_write done; 0.16 sec.
+Execute       gen_tb_info knn_cluster1 -p /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1 
+Execute       export_constraint_db -f -tool general -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+Execute       syn_report -designview -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.design.xml 
+Command       syn_report done; 0.43 sec.
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model knn_cluster1 -o /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks knn_cluster1 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain knn_cluster1 
+INFO-FLOW: Model list for RTL component generation: popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO-FLOW: Handling components in module [popcount] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+INFO-FLOW: Handling components in module [update_knn1] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+INFO-FLOW: Found component knn_cluster1_mux_cud.
+INFO-FLOW: Append model knn_cluster1_mux_cud
+INFO-FLOW: Found component knn_cluster1_mul_dEe.
+INFO-FLOW: Append model knn_cluster1_mul_dEe
+INFO-FLOW: Found component update_knn1_trainbkb.
+INFO-FLOW: Append model update_knn1_trainbkb
+INFO-FLOW: Handling components in module [update_knn2] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+INFO-FLOW: Handling components in module [update_knn3] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+INFO-FLOW: Handling components in module [update_knn4] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+INFO-FLOW: Handling components in module [update_knn5] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+INFO-FLOW: Found component regslice_core.
+INFO-FLOW: Append model regslice_core
+INFO-FLOW: Handling components in module [knn_cluster1] ... 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+INFO-FLOW: Found component fifo_w32_d1024_A.
+INFO-FLOW: Append model fifo_w32_d1024_A
+INFO-FLOW: Found component fifo_w32_d1024_A.
+INFO-FLOW: Append model fifo_w32_d1024_A
+INFO-FLOW: Found component fifo_w32_d1024_A.
+INFO-FLOW: Append model fifo_w32_d1024_A
+INFO-FLOW: Found component fifo_w32_d1024_A.
+INFO-FLOW: Append model fifo_w32_d1024_A
+INFO-FLOW: Found component start_for_update_ibs.
+INFO-FLOW: Append model start_for_update_ibs
+INFO-FLOW: Found component start_for_update_jbC.
+INFO-FLOW: Append model start_for_update_jbC
+INFO-FLOW: Found component start_for_update_kbM.
+INFO-FLOW: Append model start_for_update_kbM
+INFO-FLOW: Found component start_for_update_lbW.
+INFO-FLOW: Append model start_for_update_lbW
+INFO-FLOW: Append model popcount
+INFO-FLOW: Append model update_knn1
+INFO-FLOW: Append model update_knn2
+INFO-FLOW: Append model update_knn3
+INFO-FLOW: Append model update_knn4
+INFO-FLOW: Append model update_knn5
+INFO-FLOW: Append model knn_cluster1
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: knn_cluster1_mux_cud knn_cluster1_mul_dEe update_knn1_trainbkb regslice_core fifo_w32_d1024_A fifo_w32_d1024_A fifo_w32_d1024_A fifo_w32_d1024_A start_for_update_ibs start_for_update_jbC start_for_update_kbM start_for_update_lbW popcount update_knn1 update_knn2 update_knn3 update_knn4 update_knn5 knn_cluster1
+INFO-FLOW: To file: write model knn_cluster1_mux_cud
+INFO-FLOW: To file: write model knn_cluster1_mul_dEe
+INFO-FLOW: To file: write model update_knn1_trainbkb
+INFO-FLOW: To file: write model regslice_core
+INFO-FLOW: To file: write model fifo_w32_d1024_A
+INFO-FLOW: To file: write model fifo_w32_d1024_A
+INFO-FLOW: To file: write model fifo_w32_d1024_A
+INFO-FLOW: To file: write model fifo_w32_d1024_A
+INFO-FLOW: To file: write model start_for_update_ibs
+INFO-FLOW: To file: write model start_for_update_jbC
+INFO-FLOW: To file: write model start_for_update_kbM
+INFO-FLOW: To file: write model start_for_update_lbW
+INFO-FLOW: To file: write model popcount
+INFO-FLOW: To file: write model update_knn1
+INFO-FLOW: To file: write model update_knn2
+INFO-FLOW: To file: write model update_knn3
+INFO-FLOW: To file: write model update_knn4
+INFO-FLOW: To file: write model update_knn5
+INFO-FLOW: To file: write model knn_cluster1
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       syn_report -model knn_cluster1 -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 115.25 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'update_knn1_trainbkb_ram (RAM)' using block RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'knn_out1_V_V_U(fifo_w32_d1024_A)' using Block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'knn_out2_V_V_U(fifo_w32_d1024_A)' using Block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'knn_out3_V_V_U(fifo_w32_d1024_A)' using Block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'knn_out4_V_V_U(fifo_w32_d1024_A)' using Block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_update_ibs_U(start_for_update_ibs)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_update_jbC_U(start_for_update_jbC)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_update_kbM_U(start_for_update_kbM)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_update_lbW_U(start_for_update_lbW)' using Shift Registers.
+Command       ap_source done; 0.13 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=knn_cluster1 xml_exists=0
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=2
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=19 #gSsdmPorts=6
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -xo 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.dataonly.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+Execute       sc_get_clocks knn_cluster1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.tbgen.tcl 
+Execute       source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1083.809 ; gain = 651.035 ; free physical = 21099 ; free virtual = 27501
+INFO: [VHDL 208-304] Generating VHDL RTL for knn_cluster1.
+INFO: [VLOG 209-307] Generating Verilog RTL for knn_cluster1.
+Command     autosyn done; 15.98 sec.
+Command   csynth_design done; 38.93 sec.
+Command ap_source done; 40.5 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1 opened at Sun Sep 06 16:15:15 EDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.22 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.32 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 1.45 sec.
+Execute   export_design -rtl verilog -format ip_catalog 
+Execute     get_config_export -acc 
+Execute     get_config_export -clock_margin 
+Execute     get_config_export -custom_script 
+Execute     get_config_export -description 
+Execute     get_config_export -display_name 
+Execute     get_config_export -driver_input_dir 
+Execute     get_config_export -ipname 
+Execute     get_config_export -kernel_drc 
+Execute     get_config_export -library 
+Execute     get_config_export -qor_test 
+Execute     get_config_export -sdaccel 
+Execute     get_config_export -sim 
+Execute     get_config_export -taxonomy 
+Execute     get_config_export -use_ip 
+Execute     get_config_export -use_netlist 
+Execute     get_config_export -vendor 
+Execute     get_config_export -version 
+Execute     get_config_export -xo 
+Execute     config_export -format=ip_catalog -rtl=verilog 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -rtl verilog
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -vivado_clock 
+Execute     get_top 
+Execute     get_config_sdx -target 
+Execute     get_config_rtl -module_auto_prefix 
+Execute     get_config_sdx -target 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -tool vivado -rtl verilog -sdx-target none
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=knn_cluster1 xml_exists=1
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command     ap_source done; 0.11 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/popcount.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn1.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn2.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn3.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn4.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/update_knn5.compgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.compgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD:       copying IP vlog from /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/impl/verilog
+INFO-FLOW: DBG:CMD:       copying IP vhdl from /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/impl/vhdl
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=6
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     get_config_debug -directory 
+INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=knn_cluster1
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_top_info
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=knn_cluster1
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.rtl_wrap.cfg.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+INFO-FLOW: DBG:CMD:       generate_ipi_example_script
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_syn_sh
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       generate_imp_constraints
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.constraint.tcl 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/knn_cluster1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/.autopilot/db/global.setting.tcl 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/ylxiao/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:     exec /home/ylxiao/ws_192/F200831_DoBlink_FPGA2021/hls/dg_reg/knn_cluster1/impl/ip/pack.sh
+Command   export_design done; 12.37 sec.
+Command ap_source done; 13.82 sec.
+Execute cleanup_all 
